@@ -12,11 +12,11 @@ else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-echo "Installing .zshrc..."
 if [ -f "/home/$USER/.zshrc" ]; then
     echo "Backing up old .zshrc..."
     mv /home/$USER/.zshrc /home/$USER/.zshrc.bak
 fi
+echo "Installing .zshrc..."
 ln -s $INSTALL_PATH/zsh/.zshrc /home/$USER/.zshrc
 
 # Neovim
