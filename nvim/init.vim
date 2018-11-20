@@ -22,10 +22,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'jceb/vim-orgmode'
 Plug 'racer-rust/vim-racer'
 Plug 'wlangstroth/vim-racket'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'luochen1990/rainbow'
 
 let g:racer_cmd = "/home/leo/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
+
+let g:rainbow_active = 1
 
 call plug#end()
 
