@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+USER_PATH=/home/$(whoami)
+if [[ $(whoami) == "root" ]]; then
+    USER_PATH=/root
+fi
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/leo/.oh-my-zsh
+  export ZSH=$USER_PATH/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -108,8 +111,8 @@ alias "cd.."="cd .."
 autoload -U compinit && compinit
 
 export QT_QPA_PLATFORMTHEME=gtk2
-PATH=$PATH:/home/leo/.cargo/bin
-PATH=$PATH:/home/leo/.gem/ruby/2.5.0/gems/colorls-1.1.1/exe
+PATH=$PATH:$USER_PATH/.cargo/bin
+PATH=$PATH:$USER_PATH/.gem/ruby/2.5.0/gems/colorls-1.1.1/exe
 mkcd() { mkdir -p "$1" && cd "$1"; }
 alias "ll"="colorls -l --group-directories-first --gs --dark"
 alias "la"="colorls -Al --group-directories-first --gs --dark"

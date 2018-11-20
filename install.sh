@@ -2,34 +2,51 @@
 
 USER=$(whoami)
 INSTALL_PATH=$(pwd)
+USER_PATH=/home/$USER
+
+if [[ $USER == "root" ]]; then
+    USER_PATH=/root
+fi
 
 # ZSH
 
-if [ -d "/home/$USER/.oh-my-zsh/" ]; then
+if [ -d "$USER_PATH/.oh-my-zsh/" ]; then
     echo "Oh-My-Zsh is already installed. Skipping..."
 else
     echo "Installing Oh-My-Zsh..."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
 
-if [ -f "/home/$USER/.zshrc" ]; then
+if [ -f "$USER_PATH/.zshrc" ]; then
     echo "Backing up old .zshrc..."
-    mv /home/$USER/.zshrc /home/$USER/.zshrc.bak
+    mv $USER_PATH/.zshrc $USER_PATH/.zshrc.bak
 fi
 echo "Installing .zshrc..."
-ln -s $INSTALL_PATH/zsh/.zshrc /home/$USER/.zshrc
+ln -s $INSTALL_PATH/zsh/.zshrc $USER_PATH/.zshrc
 
 # Neovim
+INSTALLED="false"
+if [ -d $USER_PATH/.local/share/nvim/site/autoload/ ]; then
+    if [ -f $USER_PATH/.local/share/nvim/site/autoload/plug.vim ]; then
+        echo "Vim-Plug is already installed for Neovim. Skipping..."
+        INSTALLED="true"
+    fi
+fi
 
-echo "Installing init.vim..."
+if [[ $INSTALLED == "false" ]]; then
+    echo "Installing Vim-Plug for Neovim..."
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
-if [ -d "/home/$USER/.config/nvim/" ]; then
-    if [ -f "/home/$USER/.config/nvim/init.vim" ]; then
+if [ -d "$USER_PATH/.config/nvim/" ]; then
+    if [ -f "$USER_PATH/.config/nvim/init.vim" ]; then
         echo "Backing up old init.vim..."
-        mv /home/$USER/.config/nvim/init.vim /home/$USER/.config/nvim/init.vim.bak
+        mv $USER_PATH/.config/nvim/init.vim $USER_PATH/.config/nvim/init.vim.bak
     fi
 else
-    mkdir /home/$USER/.config/nvim
+    mkdir $USER_PATH/.config/nvim
 fi
-ln -s $INSTALL_PATH/nvim/init.vim /home/$USER/.config/nvim/init.vim
+
+echo "Installing init.vim..."
+ln -s $INSTALL_PATH/nvim/init.vim $USER_PATH/.config/nvim/init.vim
 
