@@ -64,6 +64,20 @@ fi
 echo "Installing i3 config..."
 ln -s $INSTALL_PATH/i3/config $USER_PATH/.config/i3/config
 
+# i3status
+
+if [ -d "$USER_PATH/.config/i3status/" ]; then
+    if [ -f "$USER_PATH/.config/i3status/config" ]; then
+        echo "Backing up old i3status config..."
+        mv $USER_PATH/.config/i3status/config $USER_PATH/.config/i3status/config.bak
+    fi
+else
+    mkdir $USER_PATH/.config/i3status
+fi
+
+echo "Installing i3status config..."
+ln -s $INSTALL_PATH/i3/i3status $USER_PATH/.config/i3status/config
+
 # gtk-3.0
 
 if [ -d "/usr/share/themes/Vimix-Midnight" ]; then
