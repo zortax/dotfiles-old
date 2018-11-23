@@ -64,3 +64,26 @@ fi
 echo "Installing i3 config..."
 ln -s $INSTALL_PATH/i3/config $USER_PATH/.config/i3/config
 
+# gtk-3.0
+
+if [ -d "/usr/share/themes/Vimix-Midnight" ]; then
+    echo "Backing up already installed version of Vimix-Midnight..."
+    sudo mv /usr/share/themes/Vimix-Midnight /usr/share/Vimix-Midnight_old
+fi
+
+echo "Installing Vimix-Midnight..."
+sudo ln -s $INSTALL_PATH/gtk-3.0/themes/Vimix-Midnight/ /usr/share/themes/Vimix-Midnight
+
+if [ -d "$USER_PATH/.config/gtk-3.0" ]; then
+    if [ -f "$USER_PATH/.config/gtk-3.0/config.ini" ]; then
+        echo "Backing up old gtk-3.0 config.ini..."
+        mv $USER_PATH/.config/gtk-3.0/config.ini $USER_PATH/.config/gtk-3.0/config.ini.bak
+    fi
+else
+    mkdir $USER_PATH/.config/gtk-3.0
+fi
+
+echo "Installing gtk-3.0 config.ini..."
+ln -s $INSTALL_PATH/gtk-3.0/config.ini $USER_PATH/.config/gtk-3.0/config.ini
+
+
