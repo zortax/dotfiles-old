@@ -176,7 +176,7 @@ bar {
 	font pango:monospace 9
         
 	colors {
-		background $bg-color
+		background #000000
 	    	separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
