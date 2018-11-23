@@ -89,9 +89,9 @@ echo "Installing Vimix-Midnight..."
 sudo ln -s $INSTALL_PATH/gtk-3.0/themes/Vimix-Midnight/ /usr/share/themes/Vimix-Midnight
 
 if [ -d "$USER_PATH/.config/gtk-3.0" ]; then
-    if [ -f "$USER_PATH/.config/gtk-3.0/config.ini" ]; then
-        echo "Backing up old gtk-3.0 config.ini..."
-        mv $USER_PATH/.config/gtk-3.0/config.ini $USER_PATH/.config/gtk-3.0/config.ini.bak
+    if [ -f "$USER_PATH/.config/gtk-3.0/settings.ini" ]; then
+        echo "Backing up old gtk-3.0 settings.ini..."
+        mv $USER_PATH/.config/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini.bak
     fi
 else
     mkdir $USER_PATH/.config/gtk-3.0
@@ -99,5 +99,4 @@ fi
 
 echo "Installing gtk-3.0 settings.ini..."
 ln -s $INSTALL_PATH/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini
-
 
