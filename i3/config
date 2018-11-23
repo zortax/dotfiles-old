@@ -229,7 +229,7 @@ bindsym $mod+n exec "/usr/bin/thunar"
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # No title bars
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
