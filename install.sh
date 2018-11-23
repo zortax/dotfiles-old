@@ -97,7 +97,7 @@ else
     mkdir $USER_PATH/.config/gtk-3.0
 fi
 
-echo "Installing gtk-3.0 config.ini..."
-ln -s $INSTALL_PATH/gtk-3.0/config.ini $USER_PATH/.config/gtk-3.0/config.ini
+echo "Installing gtk-3.0 settings.ini..."
+ln -s $INSTALL_PATH/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini
 
 
