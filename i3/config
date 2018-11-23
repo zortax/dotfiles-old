@@ -154,7 +154,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color            #2f343f
+set $bg-color            #000000
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676e7d
@@ -176,7 +176,7 @@ bar {
 	font pango:monospace 9
         
 	colors {
-		background #000000
+		background $bg-color
 	    	separator #757575
 		#                  border             background         text
 		focused_workspace  $bg-color          $bg-color          $text-color
@@ -225,6 +225,7 @@ bindsym $mod+F8 exec mocp --next
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
 bindsym $mod+n exec "/usr/bin/thunar"
+bindsym $mod+e exec "/usr/bin/nautilus"
 
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
