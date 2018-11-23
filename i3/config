@@ -173,7 +173,7 @@ client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color       
 # finds out, if available)
 bar {
 	status_command i3status
-	font pango:monospace 9
+	font pango:monospace 10
         
 	colors {
 		background $bg-color
