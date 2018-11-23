@@ -50,3 +50,17 @@ fi
 echo "Installing init.vim..."
 ln -s $INSTALL_PATH/nvim/init.vim $USER_PATH/.config/nvim/init.vim
 
+# i3
+
+if [ -d $USER_PATH/.config/i3/ ]; then
+    if [ -f "$USER_PATH/.config/i3/config" ]; then
+        echo "Backing up old i3 config..."
+        mv $USER_PATH/.config/i3/config $USER_PATH/.config/i3/config.bak
+    fi
+else
+    mkdir $USER_PATH/.config/i3
+fi
+
+echo "Installing i3 config..."
+ln -s $INSTALL_PATH/i3/config $USER_PATH/.config/i3/config
+
