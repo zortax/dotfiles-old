@@ -100,3 +100,26 @@ fi
 echo "Installing gtk-3.0 settings.ini..."
 ln -s $INSTALL_PATH/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini
 
+# polybar
+
+if [ -d "$USER_PATH/.config/polybar/" ]; then
+    if [ -f "$USER_PATH/.config/polybar/config" ]; then
+        echo "Backing up old polybar config..."
+        mv $USER_PATH/.config/polybar/config $USER_PATH/.config/polybar/config.bak
+    fi
+    if [ -f "$USER_PATH/.config/polybar/launch.sh" ]; then
+        echo "Backing up old polybar launch.sh..."
+        mv $USER_PATH/.config/polybar/launch.sh $USER_PATH/.config/polybar/launch.sh.bak
+    fi
+else
+    mkdir $USER_PATH/.config/polybar
+fi
+
+echo "Installing polybar config..."
+ln -s $INSTALL_PATH/polybar/config $USER_PATH/.config/polybar/config
+
+echo "Installing polybar launch.sh..."
+ln -s $INSTALL_PATH/polybar/launch.sh $USER_PATH/.config/polybar/launch.sh
+
+
+

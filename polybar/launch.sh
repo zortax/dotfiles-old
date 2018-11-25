@@ -9,7 +9,7 @@ while pgrep -x polybar >/dev/null; do
 done
 
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload top &
+    MONITOR=$m IFACE=$(ls /sys/class/net | grep wlp) polybar --reload top &
 done
 
 echo "Polybar started..."

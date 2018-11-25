@@ -28,20 +28,22 @@ font-3 = FontAwesome:size=8;0
 font-4 = DejaVuSans:size=8;1
 
 modules-left = i3
-;modules-center = i3
-modules-right = updates volume wireless-network battery date
+modules-center = date
+modules-right = updates volume wireless-network battery
 
 [module/battery]
 type = internal/battery
 full-at = 98
 time-format = %H:%M
 
-label-charging = %percentage%% (%time%)
-label-discharging = %percentage%% (%time%)
+label-charging = %percentage%% 
+;(%time%)
+label-discharging = %percentage%% 
+;(%time%)
 
-format-charging = <animation-charging><label-charging>
-format-discharging = <ramp-capacity><label-discharging>
-format-full = <ramp-capacity><label-full>
+format-charging = <label-charging><animation-charging>
+format-discharging = <label-discharging><ramp-capacity>
+format-full = <label-full><ramp-capacity>
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
@@ -64,7 +66,7 @@ date =   %%{F#999}%a %e %b%%{F-} %%{F#fff}%H:%M%%{F-}
 
 [module/wireless-network]
 type = internal/network
-interface = wlp6s0
+interface = ${env:IFACE:}
 interval = 3.0
 ping-interval = 10
 
@@ -171,28 +173,11 @@ label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
 
-[module/bitcoin]
-type = custom/script
-exec = ~/bin/bitcoin 
-format =   <label>
-tail = true
-interval = 5
-
-
 [module/updates]
 type = custom/script
 exec = /home/leo/.dotfiles/scripts/count-updates.sh
-format =    <label>
+format = <label>
 tail = true
 interval = 90
-
-
-[module/pkg]
-type = custom/script
-interval = 1200
-format = <label>
-format-underline = #dc322f
-label = "%output:0:30%"
-exec = .config/polybar/pkg.sh
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
 

@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 COUNT_ARCH=$(checkupdates | wc -l)
 COUNT_AUR=$(trizen -Su --aur --quiet | wc -l)
