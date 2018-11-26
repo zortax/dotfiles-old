@@ -235,7 +235,7 @@ for_window [class="^.*"] border pixel 0
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id "compton -C"
+exec --no-startup-id "compton --unredir-if-possible -C"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "sleep 5s && kalu"
