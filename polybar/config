@@ -30,9 +30,9 @@ font-2 = Termsynu:size=8;3
 font-3 = FontAwesome:size=8;2
 font-4 = DejaVuSans:size=8;1
 
-modules-left = i3
+modules-left = wireless-network updates i3
 modules-center = date
-modules-right = updates volume backlight wireless-network battery powermenu
+modules-right = volume backlight battery powermenu
 
 [module/battery]
 type = internal/battery
@@ -161,7 +161,8 @@ ws-icon-default = 
 
 label-focused = %icon%
 label-focused-foreground = #ffffff
-label-focused-background = #E63f3f3f
+label-focused-background = #5a000000
+;#E63f3f3f
 label-focused-underline = #4286f4
 label-focused-padding = 2
 
