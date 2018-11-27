@@ -5,7 +5,9 @@ clickareas = 35
 tray-position = right
 tray-padding = 2
 tray-background = #E6181818
-background = #E6181818
+tray-transparent = true
+;background = #E6181818
+background = #5a000000
 ;foreground = #999999
 foreground = #f5f5f5
 foreground-alt = #555555
@@ -29,7 +31,7 @@ font-4 = DejaVuSans:size=8;1
 
 modules-left = i3
 modules-center = date
-modules-right = updates volume wireless-network battery
+modules-right = updates volume backlight wireless-network battery powermenu
 
 [module/battery]
 type = internal/battery
@@ -41,9 +43,9 @@ label-charging = %percentage%%
 label-discharging = %percentage%% 
 ;(%time%)
 
-format-charging = <label-charging><animation-charging>
-format-discharging = <label-discharging><ramp-capacity>
-format-full = <label-full><ramp-capacity>
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
@@ -158,7 +160,7 @@ ws-icon-default = 
 label-focused = %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #E63f3f3f
-label-focused-underline = #00FF65
+label-focused-underline = #4286f4
 label-focused-padding = 2
 
 label-unfocused = %icon%
@@ -172,6 +174,48 @@ label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-padding = 2
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+enable-scroll = true
+
+format = <ramp> <label>
+label = %percentage%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+[module/powermenu]
+type = custom/menu
+
+label-open =   
+;label-open-background = #dd0000
+;label-open-foreground = #fff
+label-close = cancel
+;label-close-background = #dd0000
+;label-close-foreground = #fff
+label-open-padding = 1 
+label-close-padding = 1 
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-0-padding = 3
+menu-0-1-padding = 3
+
+menu-1-0 = reboot?  
+menu-1-0-exec = sudo reboot
+menu-1-0-padding = 3
+
+menu-2-0 = power off?  
+menu-2-0-exec = sudo poweroff
+menu-2-0-padding = 3
 
 [module/updates]
 type = custom/script

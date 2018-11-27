@@ -126,7 +126,7 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # lock
-bindsym $mod+Shift+x exec i3lock --color 475263
+bindsym $mod+Shift+x exec betterlockscreen -l dim
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -237,7 +237,8 @@ for_window [class="^.*"] border pixel 0
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id "compton --unredir-if-possible -C"
 exec --no-startup-id nm-applet
-exec --no-startup-id "nitrogen --restore"
+# exec --no-startup-id "nitrogen --restore"
+exec --no-startup-id "betterlockscreen -w"
 exec --no-startup-id "sleep 5s && kalu"
 exec --no-startup-id "xinput set-prop 11 289 1"
 exec --no-startup-id "ulauncher --hide-window"
