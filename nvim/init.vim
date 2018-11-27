@@ -64,3 +64,12 @@ let NERDTreeShowHidden=1
 
 map <C-o> :NERDTreeToggle<CR>
 
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight CursorLine ctermbg=none
+highlight LineNr ctermbg=none
+highlight LineNr ctermfg=darkgrey
+highlight Statement ctermfg=gray cterm=bold
+highlight Function ctermfg=darkred cterm=bold
+highlight Special ctermfg=darkred cterm =bold
+

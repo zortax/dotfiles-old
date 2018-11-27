@@ -93,12 +93,19 @@ if [ -d "$USER_PATH/.config/gtk-3.0" ]; then
         echo "Backing up old gtk-3.0 settings.ini..."
         mv $USER_PATH/.config/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini.bak
     fi
+    if [ -f "$USerPATH/.config/gtk-3.0/gtk.css" ]; then
+        echo "Backing up old gtk.css..."
+        mv $USER_PATH/.config/gtk-3.0/gtk.css $USER_PATH/.config/gtk-3.0/gtk.css.bak
+    fi
 else
     mkdir $USER_PATH/.config/gtk-3.0
 fi
 
 echo "Installing gtk-3.0 settings.ini..."
 ln -s $INSTALL_PATH/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini
+
+echo "Installing gtk-3.0 gtk.css..."
+ln -s $INSTALL_PATH/gtk-3.0/gtk.css $USER_PATH/.config/gtk-3.0/gtk.css
 
 # polybar
 
@@ -121,5 +128,13 @@ ln -s $INSTALL_PATH/polybar/config $USER_PATH/.config/polybar/config
 echo "Installing polybar launch.sh..."
 ln -s $INSTALL_PATH/polybar/launch.sh $USER_PATH/.config/polybar/launch.sh
 
+# compton
 
+if [ -f "$USER_PATH/.config/compton.conf" ]; then
+    echo "Backing up old compton.conf...";
+    mv $USER_PATH/.config/compton.conf $USER_PATH/.config/compton.conf.bak
+fi
+
+echo "Installing compton.conf..."
+ln -s $INSTALL_PATH/compton/compton.conf $USER_PATH/.config/compton.conf
 
