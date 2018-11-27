@@ -24,6 +24,9 @@ Plug 'racer-rust/vim-racer'
 Plug 'wlangstroth/vim-racket'
 Plug 'luochen1990/rainbow'
 
+let g:airline_powerline_fonts = 1
+let g:airline_theme='orbital'
+
 let g:racer_cmd = "/home/leo/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
@@ -71,5 +74,5 @@ highlight LineNr ctermbg=none
 highlight LineNr ctermfg=darkgrey
 highlight Statement ctermfg=gray cterm=bold
 highlight Function ctermfg=darkred cterm=bold
-highlight Special ctermfg=darkred cterm =bold
+highlight Special ctermfg=darkred cterm=bold
 
