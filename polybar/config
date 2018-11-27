@@ -116,12 +116,13 @@ bar-volume-foreground-4 = #4286f4
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = │
+bar-volume-indicator = ●
+;│
 bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = #ff
-bar-volume-fill = ─
+bar-volume-fill = ―
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = ―
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${bar/top.foreground-alt}
 
@@ -220,7 +221,7 @@ menu-2-0-padding = 3
 
 [module/updates]
 type = custom/script
-exec = /home/leo/.dotfiles/scripts/count-updates.sh
+exec = ~/.scripts/count-updates.sh
 format = <label>
 tail = true
 interval = 90

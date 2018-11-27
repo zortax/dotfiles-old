@@ -148,3 +148,13 @@ ln -s $INSTALL_PATH/compton/compton.conf $USER_PATH/.config/compton.conf
 echo "Installing gnome-terminal settings profile (select it manually)..."
 dconf load /org/gnome/terminal/legacy/profiles:/:ae3279f6-1440-4c3a-8fab-9db4a4fc777b/ < gnome-terminal/vimix-midnight-profile.dconf
 
+# Scripts
+
+if [ -d "$USER_PATH/.scripts" ]; then
+    echo "Backing up old .scripts directory...";
+    mv $USER_PATH/.scripts $USER_PATH/.scripts_old
+fi
+
+echo "Installing scripts..."
+ln -s $INSTALL_PATH/scripts/ $USER_PATH/.scripts
+
