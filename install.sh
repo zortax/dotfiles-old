@@ -8,6 +8,11 @@ if [[ $USER == "root" ]]; then
     USER_PATH=/root
 fi
 
+# Submodules
+
+echo "Updating submodules..."
+git submodule update --recursive --remote
+
 # ZSH
 
 if [ -d "$USER_PATH/.oh-my-zsh/" ]; then
@@ -93,7 +98,7 @@ if [ -d "$USER_PATH/.config/gtk-3.0" ]; then
         echo "Backing up old gtk-3.0 settings.ini..."
         mv $USER_PATH/.config/gtk-3.0/settings.ini $USER_PATH/.config/gtk-3.0/settings.ini.bak
     fi
-    if [ -f "$USerPATH/.config/gtk-3.0/gtk.css" ]; then
+    if [ -f "$USER_PATH/.config/gtk-3.0/gtk.css" ]; then
         echo "Backing up old gtk.css..."
         mv $USER_PATH/.config/gtk-3.0/gtk.css $USER_PATH/.config/gtk-3.0/gtk.css.bak
     fi
@@ -137,4 +142,9 @@ fi
 
 echo "Installing compton.conf..."
 ln -s $INSTALL_PATH/compton/compton.conf $USER_PATH/.config/compton.conf
+
+# gnome terminal
+
+echo "Installing gnome-terminal settings profile (select it manually)..."
+dconf load /org/gnome/terminal/legacy/profiles:/:ae3279f6-1440-4c3a-8fab-9db4a4fc777b/ < gnome-terminal/vimix-midnight-profile.dconf
 
