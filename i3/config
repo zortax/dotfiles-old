@@ -225,7 +225,7 @@ bindsym $mod+F8 exec mocp --next
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/firefox"
 bindsym $mod+n exec "/usr/bin/thunar"
-bindsym $mod+e exec "/usr/bin/nautilus"
+bindsym $mod+e exec "gnome-terminal -e ranger"
 
 # Redirect sound to headphones
 bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
