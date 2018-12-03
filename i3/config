@@ -244,4 +244,9 @@ exec --no-startup-id "xinput set-prop 11 289 1"
 exec --no-startup-id "ulauncher --hide-window"
 exec --no-startup-id "killall i3bar"
 exec --no-startup-id "sh /home/leo/.dotfiles/polybar/launch.sh"
+exec --no-startup-id "clipit"
+
+smart_gaps on
+gaps inner 10
+gaps outer 10
 
