@@ -199,3 +199,32 @@ if ask "Install scripts (needed by polybar configuration)?" Y; then
     ln -s $INSTALL_PATH/scripts/ $USER_PATH/.scripts
 fi
 
+# ncmpcpp
+
+if ask "Install ncmpcpp config?" Y; then
+    if [ -d "$USER_PATH/.ncmpcpp" ]; then
+        if [ -f "$USER_PATH/.ncmpcpp/config" ]; then
+            echo "Backing up old ncmpcpp config..."
+            mv $USER_PATH/.ncmpcpp/config $USER_PATH/.ncmpcpp/config.bak
+        fi
+    else
+        mkdir $USER_PATH/.nmcpcpp
+    fi
+    echo "Installing ncmpcpp config..."
+    ln -s $INSTALL_PATH/ncmpcpp/config $USER_PATH/.ncmpcpp/config
+fi
+
+# mopidy
+
+if [ -f "$USER_PATH/.config/mopidy/mopidy.conf" ]; then
+    echo "Skipping mopidy conf as there already is one in the target directory. This config needs manual editing (Spotify credentials). Backup the old config manually and run this script again if you want to (re-) install the config."
+else
+    if ask "Install mopidy.conf?" Y; then
+        if [ ! -d "$USER_PATH/.config/mopidy" ]; then
+            mkdir $USER_PATH/.config/mopidy
+        fi
+        echo "Installing mopidy.conf..."
+        cp $INSTALL_PATH/ncmpcpp/mopidy.conf $USER_PATH/.config/mopidy/mopidy.conf
+    fi
+fi
+
