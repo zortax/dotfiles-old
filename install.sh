@@ -208,7 +208,7 @@ if ask "Install ncmpcpp config?" Y; then
             mv $USER_PATH/.ncmpcpp/config $USER_PATH/.ncmpcpp/config.bak
         fi
     else
-        mkdir $USER_PATH/.nmcpcpp
+        mkdir $USER_PATH/.ncmpcpp
     fi
     echo "Installing ncmpcpp config..."
     ln -s $INSTALL_PATH/ncmpcpp/config $USER_PATH/.ncmpcpp/config
