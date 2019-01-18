@@ -132,6 +132,8 @@ export FZF_DEFAULT_OPTS='
 '
 
 zplug 'wfxr/forgit', defer:1
+zplug 'b4b4r07/emoji-cli'
+zplug 'MichaelAquilina/zsh-emojis'
 
 zplug load
 neofetch
