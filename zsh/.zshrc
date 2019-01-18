@@ -122,7 +122,7 @@ alias "la"="colorls -Al --group-directories-first --gs --dark"
 alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f2)"
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -134,6 +134,10 @@ export FZF_DEFAULT_OPTS='
 zplug 'wfxr/forgit', defer:1
 zplug 'b4b4r07/emoji-cli'
 zplug 'MichaelAquilina/zsh-emojis'
+zplug 'zdharma/fast-syntax-highlighting'
+zplug 'micrenda/zsh-nohup'
+zplug 'fALKENdk/mylocation'
+zplug 'hcgraf/zsh-sudo'
 
 zplug load
 
