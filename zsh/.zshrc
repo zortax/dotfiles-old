@@ -136,5 +136,11 @@ zplug 'b4b4r07/emoji-cli'
 zplug 'MichaelAquilina/zsh-emojis'
 
 zplug load
+
+shrug() {
+    echo $em_shrug
+    echo $em_shrug | xsel -i -b
+}
+
 neofetch
 
