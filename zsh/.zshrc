@@ -14,7 +14,7 @@ ZSH_THEME="sorin"
 GEOMETRY_SYMBOL_PROMPT="▶"
 GEOMETRY_SYMBOL_RPROMPT="▷"
 # DEFAULT_USER="leo"
-
+export FZF_BASE=/usr/bin/fzf
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -74,6 +74,7 @@ plugins=(
   rbenv
   zsh-autosuggestions
   zsh-completions
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,6 +108,8 @@ export SSH_KEY_PATH="~/.ssh/cp_key"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source /usr/share/zsh/scripts/zplug/init.zsh
+
 alias "cd.."="cd .."
 autoload -U compinit && compinit
 
@@ -121,4 +124,15 @@ alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f2)"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+# export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_OPTS='
+    --color info:108,prompt:109,spinner:108,pointer:168,marker:168
+'
+
+zplug 'wfxr/forgit', defer:1
+
+zplug load
+neofetch
 
