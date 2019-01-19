@@ -10,6 +10,9 @@
 
 - `nvim`
 - `i3` / `i3gaps`
+- `bspwm` (rounded corner patch)
+- `rofi`
+- `sxhkd`
 - `betterlockscreen`
 - `feh`
 - `imagemagick`
