@@ -23,9 +23,10 @@ Plug 'jceb/vim-orgmode'
 Plug 'racer-rust/vim-racer'
 Plug 'wlangstroth/vim-racket'
 Plug 'luochen1990/rainbow'
+Plug 'nightsense/cosmic_latte'
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='orbital'
+let g:airline_theme='minimalist'
 
 let g:racer_cmd = "/home/leo/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
@@ -34,7 +35,7 @@ let g:rainbow_active = 1
 
 call plug#end()
 
-colorscheme alduin
+colorscheme cosmic_latte
 
 set tabstop=4
 set softtabstop=4
@@ -69,10 +70,10 @@ map <C-o> :NERDTreeToggle<CR>
 
 highlight Normal ctermbg=none
 highlight NonText ctermbg=none
-highlight CursorLine ctermbg=none
-highlight LineNr ctermbg=none
-highlight LineNr ctermfg=darkgrey
-highlight Statement ctermfg=gray cterm=bold
-highlight Function ctermfg=darkred cterm=bold
-highlight Special ctermfg=darkred cterm=bold
+"highlight CursorLine ctermbg=none
+"highlight LineNr ctermbg=none
+"highlight LineNr ctermfg=darkgrey
+"highlight Statement ctermfg=gray cterm=bold
+"highlight Function ctermfg=darkred cterm=bold
+"highlight Special ctermfg=darkred cterm=bold
 

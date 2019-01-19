@@ -1,22 +1,20 @@
 [bar/top]
 width = 100%
-height = 25
+height = 20
 clickareas = 35
-;tray-position = right
-tray-padding = 8
+tray-position = right
+tray-padding = 2
 ;tray-background = #E6181818
-tray-background = #1E2127
-tray-transparent = false
+tray-background = #5a000000
+tray-transparent = true
 ;background = #E6181818
-background = #1E2127
+background = #5a000000
 ;foreground = #999999
 foreground = #f5f5f5
 foreground-alt = #555555
 dpi = 110
 monitor = ${env:MONITOR:}
-radius = 8.0
-border-size = 5
-border-color = #000000000
+
 locale = en_US.UTF-8
 
 spacing = 4
@@ -32,7 +30,7 @@ font-2 = Termsynu:size=8;3
 font-3 = FontAwesome:size=8;2
 font-4 = DejaVuSans:size=8;1
 
-modules-left = bspwm updates
+modules-left = wireless-network updates i3
 modules-center = date
 modules-right = volume backlight battery powermenu
 
@@ -144,19 +142,6 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 
-[module/bspwm]
-type = internal/bspwm
-pin-workspaces = true
-inline-mode = false
-enable-click = true
-enable-scroll = true
-label-focused = ●
-label-empty = ○
-label-occupied = ◍
-label-urgent = ●
-label-urgen-foreground = #ffb600
-label-separator = " "
-
 [module/i3]
 type = internal/i3
 
@@ -228,11 +213,11 @@ menu-0-0-padding = 3
 menu-0-1-padding = 3
 
 menu-1-0 = reboot?  
-menu-1-0-exec = reboot
+menu-1-0-exec = sudo reboot
 menu-1-0-padding = 3
 
 menu-2-0 = power off?  
-menu-2-0-exec = shutdown now
+menu-2-0-exec = sudo poweroff
 menu-2-0-padding = 3
 
 [module/updates]

@@ -1,5 +1,5 @@
 [/]
-foreground-color='rgb(245,225,204)'
+foreground-color='#AEAEAE'
 highlight-foreground-color='rgb(46,52,64)'
 scrollbar-policy='never'
 palette=['rgb(51,57,70)', 'rgb(191,97,106)', 'rgb(155,213,106)', 'rgb(229,183,92)', 'rgb(106,151,195)', 'rgb(180,142,173)', 'rgb(136,192,208)', 'rgb(229,233,240)', 'rgb(88,104,135)', 'rgb(191,97,106)', 'rgb(163,190,140)', 'rgb(220,189,126)', 'rgb(78,113,149)', 'rgb(180,142,173)', 'rgb(53,190,190)', 'rgb(236,239,244)']
@@ -19,7 +19,7 @@ scrollback-unlimited=true
 use-system-font=false
 bold-color-same-as-fg=true
 bold-color='#D8DEE9'
-background-color='rgb(24,26,36)'
-background-transparency-percent=8
+background-color='#1E2127'
+background-transparency-percent=0
 highlight-background-color='rgb(186,186,186)'
 audible-bell=false

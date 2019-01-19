@@ -228,3 +228,54 @@ else
     fi
 fi
 
+# bspwm
+
+if ask "Install bspwm config?" Y; then
+    if [ -d "$USER_PATH/.config/bspwm" ]; then
+        if [ -f "$USER_PATH/.config/bspwm/bspwmrc" ]; then
+            echo "Backing up old bspwmrc..."
+            mv $USER_PATH/.config/bspwm/bspwmrc $USER_PATH/.config/bspwm/bspwmrc.bak
+        fi
+    else
+        mkdir $USER_PATH/.config/bspwm
+    fi
+    echo "Installing bspwm config..."
+    ln -s $INSTALL_PATH/bspwm/bspwmrc $USER_PATH/.config/bspwm/bspwmrc
+fi
+
+# sxhkd
+
+if ask "Install sxhkd config?" Y; then
+    if [ -d "$USER_PATH/.config/sxhkd" ]; then
+        if [ -f "$USER_PATH/.config/sxhkd/sxhkdrc" ]; then
+            echo "Backing up old sxhkd config..."
+            mv $USER_PATH/.config/sxhkd/sxhkdrc $USER_PATH/.config/sxhkd/sxhkdrc.bak
+        fi
+    else
+        mkdir $USER_PATH/.config/sxhkd
+    fi
+    echo "Installing sxhkd config..."
+    ln -s $INSTALL_PATH/sxhkd/sxhkdrc $USER_PATH/.config/sxhkd/sxhkdrc
+fi
+
+# rofi
+
+if ask "Install rofi config?" Y; then
+    if [ -d "$USER_PATH/.config/rofi" ]; then
+        if [ -f "$USER_PATH/.config/rofi/config" ]; then
+            echo "Backing up old rofi config..."
+            mv $USER_PATH/.config/rofi/config $USER_PATH/.config/rofi/config.bak
+        fi
+        if [ -f "$USER_PATH/.config/rofi/rofi-dark-custom.rasi" ]; then
+            echo "Backing up old rofi-dark-custom theme...";
+            mv $USER_PATH/.config/rofi/rofi-dark-custom.rasi $USER_PATH/.config/rofi/rofi-dark-custom.rasi.bak
+        fi
+    else
+        mkdir $USER_PATH/.config/rofi
+    fi
+    echo "Installing rofi config..."
+    ln -s $INSTALL_PATH/rofi/config $USER_PATH/.config/rofi/config
+    echo "Installing rofi-dark-custom theme..."
+    ln -s $INSTALL_PATH/rofi/rofi-dark-custom.rasi $USER_PATH/.config/rofi/rofi-dark-custom.rasi
+fi
+

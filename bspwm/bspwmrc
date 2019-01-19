@@ -1,0 +1,34 @@
+#! /bin/sh
+
+sxhkd &
+
+if [[ $(hostname) == 'arch-desktop' ]]; then
+    xrandr --output HDMI-0 --primary --left-of DVI-I-0
+    bspc monitor HDMI-0 -d I II III IV V 
+    bspc monitor DVI-I-0 -d VI VII VIII IX X
+else
+    bspc monit -d I II III IV V VI VII VIII IX X
+fi
+
+bspc config border_width         0
+bspc config window_gap           12
+bscp config top_padding          23
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config border_radius        10
+bspc config presel_feedback_color "#969696"
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=o
+bspc rule -a Screenkey manage=off
+
+nohup nm-applet >/dev/null 2>&1 &
+betterlockscreen -w
+nohup bash $HOME/.dotfiles/polybar/launch.sh >/dev/null 2>&1 &
+nohup clipit >/dev/null 2>&1 &
+nohup compton --unredir-if-possible -C >/dev/null 2>&1 &
+nohup mopidy >/dev/null 2>&1 &
+
