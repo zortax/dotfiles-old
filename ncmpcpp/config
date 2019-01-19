@@ -60,3 +60,5 @@ visualizer_type = "wave" (spectrum/wave)
 visualizer_color = "green"
 visualizer_look = "∙▋"
 
+execute_on_song_change = ~/.scripts/send-song-notification.sh
+
