@@ -146,5 +146,11 @@ shrug() {
     echo $em_shrug | xsel -i -b
 }
 
+run() {
+    nohup $* >/dev/null 2>&1 &
+}
+
 neofetch
+
+
 
