@@ -32,3 +32,8 @@ nohup clipit >/dev/null 2>&1 &
 nohup compton --unredir-if-possible -C >/dev/null 2>&1 &
 nohup mopidy >/dev/null 2>&1 &
 
+bspc config top_padding 23
+bspc config right_padding -6
+bspc config left_padding -6
+bspc config bottom_padding -6
+
