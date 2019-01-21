@@ -6,8 +6,11 @@ if [[ $(hostname) == 'arch-desktop' ]]; then
     xrandr --output HDMI-0 --primary --left-of DVI-I-0
     bspc monitor HDMI-0 -d I II III IV V 
     bspc monitor DVI-I-0 -d VI VII VIII IX X
+elif [[ $(hostname) == 'arch' ]]; then
+    xinput set-prop 11 289 1
+    bspc monitor -d I II III IV V VI
 else
-    bspc monit -d I II III IV V VI VII VIII IX X
+    bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
 bspc config border_width         0
