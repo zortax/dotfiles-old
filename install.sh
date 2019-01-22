@@ -279,3 +279,14 @@ if ask "Install rofi config?" Y; then
     ln -s $INSTALL_PATH/rofi/rofi-dark-custom.rasi $USER_PATH/.config/rofi/rofi-dark-custom.rasi
 fi
 
+# urxvt
+
+if ask "Install urxvt config?" Y; then
+    if [ -f "$USER_PATH/.Xdefaults" ]; then
+        echo "Backing up old urxvt config..."
+        mv $USER_PATH/.Xdefaults $USER_PATH/.Xdefaults.bak
+    fi
+    echo "Installing urxvt config..."
+    ln -s $INSTALL_PATH/urxvt/.Xdefaults $USER_PATH/.Xdefaults
+fi
+
