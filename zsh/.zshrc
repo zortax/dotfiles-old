@@ -150,6 +150,10 @@ run() {
     nohup $* >/dev/null 2>&1 &
 }
 
+open() {
+    nohup xdg-open $1 >/dev/null 2>&1 &
+}
+
 neofetch
 
 
