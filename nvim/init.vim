@@ -24,6 +24,7 @@ Plug 'racer-rust/vim-racer'
 Plug 'wlangstroth/vim-racket'
 Plug 'luochen1990/rainbow'
 Plug 'nightsense/cosmic_latte'
+Plug 'vmchale/ion-vim'
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
