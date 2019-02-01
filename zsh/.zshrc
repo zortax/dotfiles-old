@@ -156,3 +156,4 @@ open() {
 
 neofetch
 
+
