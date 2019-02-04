@@ -154,6 +154,14 @@ open() {
     nohup xdg-open $1 >/dev/null 2>&1 &
 }
 
+pw() {
+    bw get password $1 | xsel -i -b 
+}
+
+bw-unlock() {
+    export BW_SESSION="$(bw unlock --raw)"
+}
+
 neofetch
 
 
