@@ -156,7 +156,7 @@ open() {
 }
 
 pw() {
-    bw get password $1 | xsel -i -b 
+    bw get password $1 | tr -d '\n' | xsel -i -b 
 }
 
 bw-unlock() {
