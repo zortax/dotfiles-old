@@ -3,9 +3,10 @@
 sxhkd &
 
 if [[ $(hostname) == 'arch-desktop' ]]; then
-    xrandr --output HDMI-0 --primary --left-of DVI-I-0
-    bspc monitor HDMI-0 -d I II III IV V 
-    bspc monitor DVI-I-0 -d VI VII VIII IX X
+    xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 3840x472 --rotate normal --output DVI-I-1 --off --output DVI-I-0 --mode 1280x1024 --pos 0x624 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 1280x0 --rotate normal
+    bspc monitor DP-0 -d I II III IV
+    bspc monitor HDMI-0 -d V VI VII VIII 
+    bspc monitor DVI-I-0 -d IX X
 elif [[ $(hostname) == 'arch' ]]; then
     xinput set-prop 11 289 1
     bspc monitor -d I II III IV V VI
