@@ -121,7 +121,7 @@ alias "ll"="colorls -l --group-directories-first --gs --dark"
 alias "la"="colorls -Al --group-directories-first --gs --dark"
 alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
-alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f2)"
+alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f1)"
 alias "weather"="curl -s us.wttr.in/Berlin\?m | head -n 37"
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
