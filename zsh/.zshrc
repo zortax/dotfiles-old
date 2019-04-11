@@ -123,6 +123,7 @@ alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f1)"
 alias "weather"="curl -s us.wttr.in/Berlin\?m | head -n 37"
+alias "copy"="xsel -ib"
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/fzf/key-bindings.zsh
