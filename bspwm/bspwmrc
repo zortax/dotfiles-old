@@ -8,7 +8,7 @@ if [[ $(hostname) == 'arch-desktop' ]]; then
     bspc monitor HDMI-0 -d V VI VII VIII 
     bspc monitor DVI-I-0 -d IX X
 elif [[ $(hostname) == 'arch' ]]; then
-    xinput set-prop 11 289 1
+    xinput set-prop 11 290 1
     bspc monitor -d I II III IV V VI
 else
     bspc monitor -d I II III IV V VI VII VIII IX X
