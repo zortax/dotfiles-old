@@ -22,6 +22,9 @@ super + Escape
 super + alt + Escape
 	bspc quit
 
+super + alt + x
+    betterlockscreen -l dim
+
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}

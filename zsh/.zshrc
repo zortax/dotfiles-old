@@ -72,8 +72,6 @@ plugins=(
   rake
   ruby
   rbenv
-  zsh-autosuggestions
-  zsh-completions
   fzf
 )
 
