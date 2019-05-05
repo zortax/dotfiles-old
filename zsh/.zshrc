@@ -111,7 +111,7 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 alias "cd.."="cd .."
 autoload -U compinit && compinit
 
-export QT_QPA_PLATFORMTHEME=gtk2
+export QT_QPA_PLATFORMTHEME=qt5ct
 PATH=$PATH:$USER_PATH/.cargo/bin
 PATH=$PATH:$USER_PATH/.gem/ruby/2.5.0/gems/colorls-1.1.1/exe
 mkcd() { mkdir -p "$1" && cd "$1"; }
