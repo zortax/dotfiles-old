@@ -154,6 +154,14 @@ open() {
     nohup xdg-open $1 >/dev/null 2>&1 &
 }
 
+wrun() {
+    ~/.scripts/open_floating_window.sh $*
+}
+
+wopen() {
+    wrun xdg-open $*
+}
+
 pw() {
     bw get password $1 | tr -d '\n' | xsel -i -b 
 }
