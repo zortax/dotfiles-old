@@ -290,3 +290,18 @@ if ask "Install urxvt config?" Y; then
     ln -s $INSTALL_PATH/urxvt/.Xdefaults $USER_PATH/.Xdefaults
 fi
 
+# vim
+
+if ask "Install vim config?" Y; then
+    if [ -d "$USER_PATH/." ]; then
+        if [ -f "$USER_PATH/./.vimrc" ]; then
+            echo "Backing up old vim config..."
+            mv $USER_PATH/./.vimrc $USER_PATH/./.vimrc.bak
+        fi
+    else
+        mkdir $USER_PATH/.
+    fi
+    echo "Installing vim config..."
+    ln -s $INSTALL_PATH/vim/.vimrc $USER_PATH/./.vimrc
+fi
+
