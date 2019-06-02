@@ -12,7 +12,7 @@ ask() {
     while true; do
         if [ "${2:-}" = "Y" ]; then
             prompt="Y/n"
-            defult=Y
+            default=Y
         elif [ "${2:-}" = "N" ]; then
             prompt="y/N"
             default=N
@@ -22,7 +22,7 @@ ask() {
         fi
         read -p "$1 [$prompt] " REPLY </dev/tty
         if [ -z "$REPLY" ]; then
-            REPLY=$defult
+            REPLY=$default
         fi
         case "$REPLY" in
             Y*|y*) return 0 ;;
