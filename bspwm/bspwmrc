@@ -35,6 +35,8 @@ nohup bash $HOME/.dotfiles/polybar/launch.sh >/dev/null 2>&1 &
 nohup clipit >/dev/null 2>&1 &
 nohup compton --unredir-if-possible -C >/dev/null 2>&1 &
 nohup mopidy >/dev/null 2>&1 &
+nohup /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+nohup /usr/lib/notify-osd/notify-osd >/dev/null 2>&1 &
 
 bspc config top_padding 23
 bspc config right_padding -6
