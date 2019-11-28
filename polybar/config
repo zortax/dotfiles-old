@@ -9,33 +9,35 @@ tray-background = #1E2127
 tray-transparent = false
 ;background = #E6181818
 ;background = #1E2127
-background = #000000
+background = #111111
 ;foreground = #999999
 foreground = #f5f5f5
 foreground-alt = #555555
 dpi = 110
 monitor = ${env:MONITOR:}
-radius = 8.0
-border-size = 5
+radius = 0.0
+border-size = 0
 border-color = #000000000
 locale = en_US.UTF-8
+bottom = true
 
-spacing = 4
+spacing = 1
 underline-size = 2
-padding-right = 5
+padding-right = 2
 padding-left = 2
-module-margin-left = 5
-module-margin-right = 3
+module-margin-left = 2
+module-margin-right = 2
 
-font-0 = SFNS Display:style=Regular:size=8;3
+;font-0 = SFNS Display:style=Regular:size=8;3
+font-0 = Hack:syle=Regular:size=8;3
 font-1 = MaterialIcons:size=8;3
 font-2 = Termsynu:size=8;3
 font-3 = FontAwesome:size=8;2
 font-4 = DejaVuSans:size=8;1
 
-modules-left = bspwm updates
-modules-center = date
-modules-right = volume backlight battery powermenu
+modules-left = bspwm title
+modules-center = 
+modules-right = volume updates wireless-network backlight battery date powermenu
 
 [module/battery]
 type = internal/battery
@@ -119,13 +121,15 @@ bar-volume-foreground-4 = #4286f4
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
-bar-volume-indicator = ●
+bar-volume-indicator = •
 ;│
 bar-volume-indicator-font = 2
 bar-volume-indicator-foreground = #ff
-bar-volume-fill = ―
+;bar-volume-fill = ―
+bar-volume-fill = ·
 bar-volume-fill-font = 2
-bar-volume-empty = ―
+;bar-volume-empty = ―
+bar-volume-empty = ·
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${bar/top.foreground-alt}
 
@@ -243,4 +247,36 @@ format = <label>
 tail = true
 interval = 90
 exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <label> <ramp-coreload>
+ramp-coreload-spacing = 1
+ramp-coreload-0 = ▁
+ramp-coreload-1 = ▂
+ramp-coreload-2 = ▃
+ramp-coreload-3 = ▄
+ramp-coreload-4 = ▅
+ramp-coreload-5 = ▆
+ramp-coreload-6 = ▇
+ramp-coreload-7 = █
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label> <ramp-used>
+ramp-used-0 = ▁
+ramp-used-1 = ▂
+ramp-used-2 = ▃
+ramp-used-3 = ▄
+ramp-used-4 = ▅
+ramp-used-5 = ▆
+ramp-used-6 = ▇
+ramp-used-7 = █
+ramp-u
+label = RAM: %gb_used%
+
+[module/title]
+type = internal/xwindow
 
