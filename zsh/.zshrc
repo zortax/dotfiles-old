@@ -66,12 +66,12 @@ export FZF_BASE=/usr/bin/fzf
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  bundler
+#  bundler
   dotenv
-  osx
-  rake
-  ruby
-  rbenv
+#  osx
+#  rake
+#  ruby
+#  rbenv
   fzf
 )
 
@@ -132,12 +132,12 @@ export FZF_DEFAULT_OPTS='
 '
 
 zplug 'wfxr/forgit', defer:1
-zplug 'b4b4r07/emoji-cli'
-zplug 'MichaelAquilina/zsh-emojis'
+#zplug 'b4b4r07/emoji-cli'
+#zplug 'MichaelAquilina/zsh-emojis'
 zplug 'zdharma/fast-syntax-highlighting'
-zplug 'micrenda/zsh-nohup'
+#zplug 'micrenda/zsh-nohup'
 zplug 'fALKENdk/mylocation'
-zplug 'hcgraf/zsh-sudo'
+#zplug 'hcgraf/zsh-sudo'
 
 zplug load
 
@@ -170,6 +170,11 @@ bw-unlock() {
     export BW_SESSION="$(bw unlock --raw)"
 }
 
-neofetch
+setwall() {
+    betterlockscreen -u $1 -r 2560x1440
+    betterlockscreen -w
+}
+
+#neofetch
 
 

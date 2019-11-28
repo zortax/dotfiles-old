@@ -45,7 +45,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'ryanoasis/vim-devicons'
 Plug 'jceb/vim-orgmode'
-
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -830,4 +830,7 @@ nnoremap <C-j> <C-w>j
 
 map <C-o> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+
+" Set LaTeX Live Preview viewer to okular
+let g:livepreview_previewer = 'okular'
 
