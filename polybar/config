@@ -279,4 +279,4 @@ label = RAM: %gb_used%
 
 [module/title]
 type = internal/xwindow
-
+label-maxlen = 100
