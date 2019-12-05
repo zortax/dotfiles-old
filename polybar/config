@@ -37,7 +37,7 @@ font-4 = DejaVuSans:size=8;1
 
 modules-left = bspwm title
 modules-center = 
-modules-right = volume updates wireless-network backlight battery date powermenu
+modules-right = player volume updates wireless-network backlight battery date powermenu
 
 [module/battery]
 type = internal/battery
@@ -280,3 +280,11 @@ label = RAM: %gb_used%
 [module/title]
 type = internal/xwindow
 label-maxlen = 100
+
+[module/player]
+type = custom/script
+exec = ~/polybar-scripts/polybar-scripts/player-mpris-simple/player-mpris-simple.sh
+interval = 3
+click-left = playerctl previous &
+click-right = playerctl next &
+click-middle = playerctl play-pause &
