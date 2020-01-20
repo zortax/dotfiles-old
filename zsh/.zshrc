@@ -116,7 +116,8 @@ PATH=$PATH:$USER_PATH/.cargo/bin
 PATH=$PATH:$USER_PATH/.gem/ruby/2.5.0/gems/colorls-1.1.1/exe
 mkcd() { mkdir -p "$1" && cd "$1"; }
 alias "ll"="colorls -l --group-directories-first --gs --dark"
-alias "la"="colorls -Al --group-directories-first --gs --dark"
+#alias "la"="colorls -Al --group-directories-first --gs --dark"
+alias "la"="ls --group-directories-first -hal"
 alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f1)"

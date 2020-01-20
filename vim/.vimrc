@@ -71,11 +71,14 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'chase/focuspoint-vim'
+Plug 'sakibmoon/vim-colors-notepad-plus-plus'
 " Plug 'zortax/focuspoint-vim'
 Plug 'agreco/vim-citylights'
 Plug 'wolf-dog/sceaduhelm.vim'
 Plug 'Alvarocz/vim-northpole'
 Plug 'widatama/vim-phoenix'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'cocopon/iceberg.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -254,7 +257,11 @@ set ruler
 set number
 
 let no_buffers_menu=1
-silent! colorscheme focuspoint
+" silent! colorscheme focuspoint
+silent! colorscheme iceberg
+
+" Disable Line Number background
+highlight LineNr ctermbg=NONE
 
 set mousemodel=popup
 set t_Co=256
@@ -833,4 +840,4 @@ let NERDTreeShowHidden=1
 
 " Set LaTeX Live Preview viewer to okular
 let g:livepreview_previewer = 'okular'
-
+com! FormatJSON %!python -m json.tool
