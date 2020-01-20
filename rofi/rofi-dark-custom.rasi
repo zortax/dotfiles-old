@@ -1,13 +1,13 @@
 
 * {
-    backgroundcolor: #1E2127;
-    bg1: #3b4252;
-    backgroundcoloralternate: #1E2127;
-    separatorcolor: #3b4252;
-    scrollbarcolor: #3b4252;
+    backgroundcolor: #111111;
+    bg1: #262626;
+    backgroundcoloralternate: #111111;
+    separatorcolor: #262626;
+    scrollbarcolor: #262626;
     foregroundcolor: #839496;
     foregroundcolorinverse: #839496;
-    selectioncolor: #3b4252;
+    selectioncolor: #262626;
 
     font-size: 1px;
     border-color: @separatorcolor;
@@ -41,7 +41,7 @@
 }
 
 #element {
-    padding: 8;
+    padding: 6;
     border: 0 0 1 0;
     border-color: @separatorcolor;
     background-color: @backgroundcoloralternate;
