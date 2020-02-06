@@ -25,6 +25,9 @@ super + alt + Escape
 super + alt + x
     betterlockscreen -l dim
 
+ctrl + alt + s
+    bash ~/.scripts/screenshot_and_upload.sh
+
 # close and kill
 super + {_,shift + }q
 	bspc node -{c,k}
