@@ -1,0 +1,27 @@
+[/]
+audible-bell=true
+background-color='rgb(17,17,17)'
+background-transparency-percent=15
+bold-color='#D8DEE9'
+bold-color-same-as-fg=true
+cell-height-scale=1.1000000000000001
+cell-width-scale=1.0
+cursor-background-color='rgb(163,167,173)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(59,66,82)'
+cursor-shape='block'
+default-size-columns=110
+default-size-rows=30
+font='Hack 9'
+foreground-color='rgb(174,174,174)'
+highlight-background-color='rgb(186,186,186)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(46,52,64)'
+palette=['rgb(51,57,70)', 'rgb(191,97,106)', 'rgb(155,213,106)', 'rgb(229,183,92)', 'rgb(106,151,195)', 'rgb(180,142,173)', 'rgb(136,192,208)', 'rgb(229,233,240)', 'rgb(88,104,135)', 'rgb(191,97,106)', 'rgb(163,190,140)', 'rgb(220,189,126)', 'rgb(78,113,149)', 'rgb(180,142,173)', 'rgb(23,147,209)', 'rgb(236,239,244)']
+scroll-on-output=false
+scrollback-unlimited=true
+scrollbar-policy='never'
+use-system-font=false
+use-theme-colors=false
+use-transparent-background=false
+visible-name='Vimix-Midnight'
