@@ -64,6 +64,8 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
+Plug 'thaerkh/vim-workspace'
+
 "" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
