@@ -14,16 +14,15 @@ else
     bspc monitor -d I II III IV V VI VII VIII IX X
 fi
 
-bspc config border_width         0
-#bspc config window_gap           12
-bspc config window_gap           0
-#bscp config top_padding          23
+bspc config border_width         2
+bspc config window_gap           10
 bspc config top_padding          0
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config border_radius        10
 bspc config presel_feedback_color "#969696"
+bspc config focused_border_color '#B05B3C'
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
@@ -31,14 +30,14 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=o
 bspc rule -a Screenkey manage=off
 
-nohup nm-applet >/dev/null 2>&1 &
+nm-applet >/dev/null 2>&1 &
 betterlockscreen -w
-nohup bash $HOME/.dotfiles/polybar/launch.sh >/dev/null 2>&1 &
-nohup clipit >/dev/null 2>&1 &
-nohup compton --unredir-if-possible -C >/dev/null 2>&1 &
-nohup mopidy >/dev/null 2>&1 &
-nohup /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
-nohup /usr/lib/notify-osd/notify-osd >/dev/null 2>&1 &
+bash $HOME/.dotfiles/polybar/launch.sh >/dev/null 2>&1 &
+clipit >/dev/null 2>&1 &
+compton --unredir-if-possible -C >/dev/null 2>&1 &
+mopidy >/dev/null 2>&1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+/usr/lib/notify-osd/notify-osd >/dev/null 2>&1 &
 
 bspc config top_padding 0 #23
 bspc config right_padding 0 #-6
