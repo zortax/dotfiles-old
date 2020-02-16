@@ -45,3 +45,5 @@ bspc config right_padding 0 #-6
 bspc config left_padding 0 #-6
 bspc config bottom_padding 0 #-6
 
+setxkbmap -layout de
+export QT_QPA_PLATFORMTHEME=qt5ct
