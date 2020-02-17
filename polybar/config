@@ -50,7 +50,7 @@ time-format = %H:%M
 
 label-charging = %{F#41535b} / chr%{F#cccccc}%percentage%% 
 ;(%time%)
-label-discharging = %{F#41535b} / dchr%{F#cccccc}%percentage%% 
+label-discharging = %{F#41535b} / dchr%{F#cccccc}%percentage%%
 ;(%time%)
 
 ;format-charging = <animation-charging><label-charging>
