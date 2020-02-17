@@ -14,7 +14,7 @@ background-alt = #555
 ;foreground = #999999
 foreground = #cccccc
 foreground-alt = #555555
-dpi = 110
+dpi = 190
 monitor = ${env:MONITOR:}
 offset-x = 6
 offset-y = 6
@@ -32,7 +32,7 @@ module-margin-left = 0
 module-margin-right = 0
 
 ;font-0 = SFNS Display:style=Regular:size=8;3
-font-0 = Hack:style=Regular:size=8;3
+font-0 = Hack:style=Regular:size=5;3
 ;font-0 = JetBrains Mono:pixelsize=8;2
 ;font-1 = MaterialIcons:size=8;3
 ;font-2 = Termsynu:size=8;3
