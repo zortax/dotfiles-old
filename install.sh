@@ -305,3 +305,23 @@ if ask "Install vim config?" Y; then
     ln -s $INSTALL_PATH/vim/.vimrc $USER_PATH/./.vimrc
 fi
 
+# konsole profile
+
+if ask "Install konsole profile config?" Y; then
+    if [ -d "$USER_PATH/.local/share/konsole" ]; then
+        if [ -f "$USER_PATH/.local/share/konsole/Dark.profile" ]; then
+            echo "Backing up old konsole profile config..."
+            mv $USER_PATH/.local/share/konsole/Dark.profile $USER_PATH/.local/share/konsole/Dark.profile.bak
+        fi
+        if [ -f "$USER_PATH/.local/share/konsole/Dark.colorscheme" ]; then
+            echo "Backing up old Dark.colorscheme..."
+            mv $USER_PATH/.local/share/konsole/Dark.colorscheme $USER_PATH/.local/share/konsole/Dark.colorscheme.bak
+        fi
+    else
+        mkdir $USER_PATH/.local/share/konsole
+    fi
+    echo "Installing konsole profile config..."
+    ln -s $INSTALL_PATH/konsole/Dark.profile $USER_PATH/.local/share/konsole/Dark.profile
+    ln -s $INSTALL_PATH/konsole/Dark.colorscheme $USER_PATH/.local/share/konsole/Dark.colorscheme
+fi
+
