@@ -264,7 +264,7 @@ if ask "Install rofi config?" Y; then
     if [ -d "$USER_PATH/.config/rofi" ]; then
         if [ -f "$USER_PATH/.config/rofi/config" ]; then
             echo "Backing up old rofi config..."
-            mv $USER_PATH/.config/rofi/config $USER_PATH/.config/rofi/config.bak
+            mv $USER_PATH/.config/rofi/config.rasi $USER_PATH/.config/rofi/config.rasi.bak
         fi
         if [ -f "$USER_PATH/.config/rofi/rofi-dark-custom.rasi" ]; then
             echo "Backing up old rofi-dark-custom theme...";
@@ -274,7 +274,7 @@ if ask "Install rofi config?" Y; then
         mkdir $USER_PATH/.config/rofi
     fi
     echo "Installing rofi config..."
-    ln -s $INSTALL_PATH/rofi/config $USER_PATH/.config/rofi/config
+    ln -s $INSTALL_PATH/rofi/config.rasi $USER_PATH/.config/rofi/config.rasi
     echo "Installing rofi-dark-custom theme..."
     ln -s $INSTALL_PATH/rofi/rofi-dark-custom.rasi $USER_PATH/.config/rofi/rofi-dark-custom.rasi
 fi
