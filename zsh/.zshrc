@@ -182,3 +182,6 @@ setwall() {
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/mcli mcli
+
+export PATH=$PATH:~/.scripts
+

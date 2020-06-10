@@ -51,6 +51,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -261,6 +262,11 @@ highlight LineNr guibg=NONE
 highlight Normal guibg=NONE
 highlight NonText guibg=NONE
 highlight EndOfBuffer guibg=NONE
+highlight LineNr ctermbg=NONE
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight EndOfBuffer ctermbg=NONE
+
 
 " Airline theme
 "let g:airline_theme='minimalist'

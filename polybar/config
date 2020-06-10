@@ -332,3 +332,11 @@ interval = 3
 click-left = playerctl previous &
 click-right = playerctl next &
 click-middle = playerctl play-pause &
+
+[module/polywins]
+type = custom/script
+exec = ~/.scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
+label-padding = 1
+interval = .5
