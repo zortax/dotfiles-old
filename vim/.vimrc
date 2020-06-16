@@ -52,6 +52,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'chrisbra/Colorizer'
 
 call plug#end()
 
@@ -145,6 +146,9 @@ let g:ycm_semantic_triggers.tex = [
     \ 're!\\[A-Za-z]*',
     \ ]
 
+let g:vimtex_quickfix_enabled = 0
+
+let g:tex_conceal = "a"
 
 " ale
 let g:airline#extensions#ale#enabled = 1
@@ -191,6 +195,7 @@ endif
 syntax on
 set ruler
 set number
+set cursorline
 
 if &term =~ '256color'
     set t_ut=
@@ -266,7 +271,10 @@ highlight LineNr ctermbg=NONE
 highlight Normal ctermbg=NONE
 highlight NonText ctermbg=NONE
 highlight EndOfBuffer ctermbg=NONE
+highlight SignColumn guibg=NONE
 
+highlight CursorLine guibg=#191919
+highlight CursorLineNr guibg=#191919
 
 " Airline theme
 "let g:airline_theme='minimalist'
