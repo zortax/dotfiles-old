@@ -325,3 +325,12 @@ if ask "Install konsole profile config?" Y; then
     ln -s $INSTALL_PATH/konsole/Dark.colorscheme $USER_PATH/.local/share/konsole/Dark.colorscheme
 fi
 
+# kitty config directory
+if ask "Install kitty config directory?" Y; then
+    if [ -d "$USER_PATH/.config/kitty" ]; then
+        echo "Backing up old kitty config directory..."
+        mv $USER_PATH/.config/kitty $USER_PATH/.config/kitty_bak
+    fi
+    ln -s $INSTALL_PATH/kitty $USER_PATH/.config/kitty
+fi
+
