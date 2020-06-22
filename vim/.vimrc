@@ -39,7 +39,7 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 Plug 'lervag/vimtex'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'jeaye/color_coded'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
@@ -114,6 +114,8 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>e :FZF -m<CR>
 nmap <leader>y :History:<CR>
+nnoremap <silent> <leader>l :Lines<CR>
+
 
 " YouCompleteMe
 
