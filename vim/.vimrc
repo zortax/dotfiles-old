@@ -53,6 +53,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'chrisbra/Colorizer'
+Plug 'junegunn/goyo.vim' 
 
 call plug#end()
 
