@@ -9,11 +9,11 @@ tray-background = #1E2127
 tray-transparent = false
 ;background = #E6181818
 ;background = #1E2127
-background = #FFFFFF
-background-alt = #ABABAB
+background = #111111
+background-alt = #555
 ;foreground = #999999
-foreground = #101010
-foreground-alt = #111111
+foreground = #cccccc
+foreground-alt = #555555
 dpi = 190
 monitor = ${env:MONITOR:}
 offset-x = 6
@@ -175,7 +175,7 @@ enable-click = true
 enable-scroll = true
 ;label-focused = ●
 label-focused = " %index% "
-label-focused-background = #E4E4E4
+label-focused-background = #555
 ;label-empty = ○
 label-empty = " %index% "
 ;label-occupied = ◍
@@ -279,7 +279,7 @@ exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
 interval = 90
 tail = true
 format = <label>
-label = %{F#41535b} / pac%{F#101010} %output%
+label = %{F#41535b} / pac%{F#cccccc} %output%
 
 [module/aur]
 type = custom/script
@@ -288,7 +288,7 @@ exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
 interval = 90
 tail = true
 format = <label>
-label = %{F#41535b} / aur%{F#101010} %output%
+label = %{F#41535b} / aur%{F#cccccc} %output%
  
 [module/cpu]
 type = internal/cpu
@@ -323,7 +323,7 @@ label = %{F#41535b} / ram%{-F} %gb_used%%
 type = internal/xwindow
 label-maxlen = 100
 ;label = %{F#41535b} / %{-F} %title%
-label = " %{F#41535b}/  %{F#101010}%title%"
+label = " %{F#41535b}/  %{F#cccccc}%title%"
 
 [module/player]
 type = custom/script

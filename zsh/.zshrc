@@ -10,9 +10,10 @@ fi
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="sorin"
-GEOMETRY_SYMBOL_PROMPT="▶"
-GEOMETRY_SYMBOL_RPROMPT="▷"
+#ZSH_THEME="sorin"
+ZSH_THEME="mh"
+#GEOMETRY_SYMBOL_PROMPT="▶"
+#GEOMETRY_SYMBOL_RPROMPT="▷"
 # DEFAULT_USER="leo"
 export FZF_BASE=/usr/bin/fzf
 # Set list of themes to load
@@ -76,6 +77,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+PROMPT='[%{$fg[black]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) '
 
 # User configuration
 
