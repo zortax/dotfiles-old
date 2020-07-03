@@ -40,7 +40,7 @@ else
 endif
 Plug 'lervag/vimtex'
 "Plug 'dense-analysis/ale'
-Plug 'jeaye/color_coded'
+"Plug 'jeaye/color_coded'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -52,8 +52,12 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
-Plug 'chrisbra/Colorizer'
+"Plug 'chrisbra/Colorizer'
 Plug 'junegunn/goyo.vim' 
+"Plug 'rainglow/vim'
+"Plug 'nightsense/vimspectr'
+Plug 'mswift42/vim-themes'
+Plug 'vim-scripts/CSApprox'
 
 call plug#end()
 
@@ -245,13 +249,20 @@ command! FormatJson %!python -m json.tool
 """"""""""""""""""
 " Theme Overrides
 """"""""""""""""""
-set termguicolors
-set background=dark
+"set termguicolors
+"set background=dark
+
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 
 " Colorscheme
 "silent! colorscheme two-firewatch
 "silent! colorscheme iceberg
-silent! colorscheme gruvbox-material
+"silent! colorscheme gruvbox-material
+"silent! colorscheme yitzchok
+"silent! colorscheme stealth
+"silent! colorscheme vimspectrgrey-dark
+"silent! colorscheme Oldlace
+silent! colorscheme Greymatters
 
 " iceberg
 "highlight LineNr ctermbg=none
@@ -266,19 +277,19 @@ silent! colorscheme gruvbox-material
 "highlight NonText guibg=NONE
 
 " two-firewatch
-highlight LineNr guibg=NONE
-highlight Normal guibg=NONE
-highlight NonText guibg=NONE
-highlight EndOfBuffer guibg=NONE
-highlight LineNr ctermbg=NONE
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-highlight EndOfBuffer ctermbg=NONE
-highlight SignColumn guibg=NONE
+"highlight LineNr guibg=NONE
+"highlight Normal guibg=NONE
+"highlight NonText guibg=NONE
+"highlight EndOfBuffer guibg=NONE
+"highlight LineNr ctermbg=NONE
+"highlight Normal ctermbg=NONE
+"highlight NonText ctermbg=NONE
+"highlight EndOfBuffer ctermbg=NONE
+"highlight SignColumn guibg=NONE
 
-highlight CursorLine guibg=#191919
-highlight CursorLineNr guibg=#191919
+"highlight CursorLine guibg=#191919
+"highlight CursorLineNr guibg=#191919
 
 " Airline theme
 "let g:airline_theme='minimalist'
-let g:airline_theme='gruvbox_material'
+let g:airline_theme='silver'
