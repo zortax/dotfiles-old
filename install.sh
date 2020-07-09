@@ -54,6 +54,17 @@ if ask "Install .zshrc?" Y; then
     ln -s $INSTALL_PATH/zsh/.zshrc $USER_PATH/.zshrc
 fi
 
+# .p10k.zsh
+
+if ask "Install .p10k.zsh?" Y; then
+    if [ -f "$USER_PATH/.p10k.zsh" ]; then
+        echo "Backing up old .p10k.zsh..."
+        mv $USER_PATH/.p10k.zsh $USER_PATH/.p10k.zsh.bak
+    fi
+    echo "Installing .p10k.zsh..."
+    ln -s $INSTALL_PATH/zsh/.p10k.zsh $USER_PATH/.p10k.zsh
+fi
+
 # Neovim
 
 if ask "Install Neovim configuration?" Y; then

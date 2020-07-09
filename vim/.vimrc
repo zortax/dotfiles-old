@@ -195,7 +195,7 @@ set titlestring=%F
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 
 nnoremap n nzzzv
-nnoremap N Nzzzv
+noremap N Nzzzv
 
 " Autoindent
 set autoindent
@@ -227,6 +227,7 @@ set background=dark
 " Colorscheme
 silent! colorscheme two-firewatch
 
+" Airline Theme
 set noshowmode
 let g:airline_theme='base16'
 
