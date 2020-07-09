@@ -1,6 +1,5 @@
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
-
 if !filereadable(vimplug_exists)
   if !executable("curl")
     echoerr "You have to install curl or first install vim-plug yourself!"
@@ -29,8 +28,8 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/lightline.vim'
-Plug 'cocopon/iceberg.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -41,9 +40,6 @@ endif
 Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
-Plug 'rafi/awesome-vim-colorschemes'
-Plug 'sonph/onehalf'
-Plug 'sainnhe/gruvbox-material'
 Plug 'ciaranm/detectindent'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
@@ -51,6 +47,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
+Plug 'zortax/vim-two-firewatch'
 
 call plug#end()
 
@@ -133,9 +130,6 @@ let g:vimtex_quickfix_enabled = 0
 
 let g:tex_conceal = "a"
 
-" ale
-let g:airline#extensions#ale#enabled = 1
-let g:ale_linters = {'cpp': ['clang']}
 
 " vim-autoformat
 nmap <C-l> :Autoformat<CR>
@@ -233,22 +227,6 @@ set background=dark
 " Colorscheme
 silent! colorscheme two-firewatch
 
-" two-firewatch
-highlight LineNr guibg=NONE
-highlight Normal guibg=NONE
-highlight NonText guibg=NONE
-highlight EndOfBuffer guibg=NONE
-highlight LineNr ctermbg=NONE
-highlight Normal ctermbg=NONE
-highlight NonText ctermbg=NONE
-highlight EndOfBuffer ctermbg=NONE
-highlight SignColumn guibg=NONE
-
-highlight CursorLine guibg=#191919 cterm=NONE
-highlight CursorLineNr guibg=#191919
-
 set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ }
+let g:airline_theme='base16'
 
