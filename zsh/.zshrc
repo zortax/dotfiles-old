@@ -5,7 +5,7 @@ if [[ $(whoami) == "root" ]]; then
     USER_PATH=/root
 fi
 # Path to your oh-my-zsh installation.
-  export ZSH=$USER_PATH/.oh-my-zsh
+export ZSH=$USER_PATH/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -77,7 +77,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-PROMPT='[%{$fg[black]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) '
+# Light variant of mh prompt theme
+#PROMPT='[%{$fg[black]%}%B%n%b%{$reset_color%}:%{$fg[red]%}%30<...<%~%<<%{$reset_color%}]%(!.#.$) '
 
 # User configuration
 
@@ -123,7 +124,6 @@ alias "la"="ls --group-directories-first -hal"
 alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f1)"
-alias "weather"="curl -s us.wttr.in/Berlin\?m | head -n 37"
 alias "copy"="xsel -ib"
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh

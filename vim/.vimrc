@@ -1,5 +1,6 @@
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
+
 if !filereadable(vimplug_exists)
   if !executable("curl")
     echoerr "You have to install curl or first install vim-plug yourself!"
@@ -28,8 +29,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'Yggdroot/indentLine'
 if isdirectory('/usr/local/opt/fzf')
@@ -39,8 +39,6 @@ else
   Plug 'junegunn/fzf.vim'
 endif
 Plug 'lervag/vimtex'
-"Plug 'dense-analysis/ale'
-"Plug 'jeaye/color_coded'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -52,12 +50,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
-"Plug 'chrisbra/Colorizer'
-Plug 'junegunn/goyo.vim' 
-"Plug 'rainglow/vim'
-"Plug 'nightsense/vimspectr'
-Plug 'mswift42/vim-themes'
-Plug 'vim-scripts/CSApprox'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -78,23 +71,6 @@ let g:NERDTreeShowHidden=1
 
 map <C-o> :NERDTreeToggle<CR>
 
-
-" vim-airline
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-let g:airline#extensions#tabline#left_sep = '' " ''
-let g:airline#extensions#tabline#left_alt_sep = '' " ''
-let g:airline_left_sep = '' " ''
-let g:airline_left_alt_sep = '' " ''
-let g:airline_right_sep = '' " ''
-let g:airline_right_alt_sep = '' " ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
-let g:airline_powerline_fonts = 1
 
 " indentLine
 let g:indentLine_char = '┊'
@@ -249,47 +225,30 @@ command! FormatJson %!python -m json.tool
 """"""""""""""""""
 " Theme Overrides
 """"""""""""""""""
-"set termguicolors
-"set background=dark
-
-let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+set background=dark
 
 " Colorscheme
-"silent! colorscheme two-firewatch
-"silent! colorscheme iceberg
-"silent! colorscheme gruvbox-material
-"silent! colorscheme yitzchok
-"silent! colorscheme stealth
-"silent! colorscheme vimspectrgrey-dark
-"silent! colorscheme Oldlace
-silent! colorscheme Greymatters
-
-" iceberg
-"highlight LineNr ctermbg=none
-"highlight Normal ctermbg=none
-"highlight NonText ctermbg=none
-
-
-" ayu
-"let ayucolor="dark"
-"highlight LineNr guibg=NONE
-"highlight Normal guibg=NONE
-"highlight NonText guibg=NONE
+silent! colorscheme two-firewatch
 
 " two-firewatch
-"highlight LineNr guibg=NONE
-"highlight Normal guibg=NONE
-"highlight NonText guibg=NONE
-"highlight EndOfBuffer guibg=NONE
-"highlight LineNr ctermbg=NONE
-"highlight Normal ctermbg=NONE
-"highlight NonText ctermbg=NONE
-"highlight EndOfBuffer ctermbg=NONE
-"highlight SignColumn guibg=NONE
+highlight LineNr guibg=NONE
+highlight Normal guibg=NONE
+highlight NonText guibg=NONE
+highlight EndOfBuffer guibg=NONE
+highlight LineNr ctermbg=NONE
+highlight Normal ctermbg=NONE
+highlight NonText ctermbg=NONE
+highlight EndOfBuffer ctermbg=NONE
+highlight SignColumn guibg=NONE
 
-"highlight CursorLine guibg=#191919
-"highlight CursorLineNr guibg=#191919
+highlight CursorLine guibg=#191919 cterm=NONE
+highlight CursorLineNr guibg=#191919
 
-" Airline theme
-"let g:airline_theme='minimalist'
-let g:airline_theme='silver'
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ }
+

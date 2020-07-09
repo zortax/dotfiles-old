@@ -1,0 +1,3 @@
+#!/bin/bash
+CITY=${1:-Berlin}
+curl -s us.wttr.in/$CITY\?m | head -n 37
