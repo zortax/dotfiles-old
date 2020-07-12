@@ -28,8 +28,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'zortax/lightline.vim'
 Plug 'Yggdroot/indentLine'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -48,6 +47,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'zortax/vim-two-firewatch'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -204,6 +204,8 @@ filetype plugin indent on
 " Use systemclipboard
 set clipboard=unnamedplus
 
+set ttimeoutlen=0
+
 """""""""""""""""""""""
 " Commands
 """""""""""""""""""""""
@@ -229,5 +231,31 @@ silent! colorscheme two-firewatch
 
 " Airline Theme
 set noshowmode
-let g:airline_theme='base16'
+source ~/.dotfiles/vim/lightline_theme.vim
+let g:lightline = {
+      \ 'colorscheme': 'dark_qualitative',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ]],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'gitbranch' ]]
+      \ },
+      \ 'separator': {
+      \   'left': '',
+      \   'right': ''
+      \ },
+      \ 'component_function': {
+      \   'readonly': 'LightlineReadonly',
+      \   'gitbranch': 'LightlineGitbranch'
+      \ },
+      \ }
+
+function! LightlineReadonly()
+    return &readonly ? '' : ''
+endfunction
+
+function! LightlineGitbranch()
+    return FugitiveHead() !=# '' ? " " . FugitiveHead() : ''
+endfunction
 
