@@ -35,7 +35,7 @@ bspc rule -a Zathura -o state=tiled
 
 nm-applet >/dev/null 2>&1 &
 betterlockscreen -w
-bash $HOME/.dotfiles/polybar/launch.sh >/dev/null 2>&1 &
+bash $HOME/.config/polybar/launch.sh >/dev/null 2>&1 &
 clipit >/dev/null 2>&1 &
 compton --unredir-if-possible -C >/dev/null 2>&1 &
 mopidy >/dev/null 2>&1 &
