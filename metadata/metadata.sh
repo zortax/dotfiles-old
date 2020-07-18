@@ -36,3 +36,6 @@ i3_path=".config/i3"
 i3status_description="Desktop Status Bar (polybar is better)"
 i3status_path=".config/i3status"
 
+ranger_description="Terminal file manager"
+ranger_path=".config/ranger"
+
