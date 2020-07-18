@@ -39,3 +39,6 @@ i3status_path=".config/i3status"
 ranger_description="Terminal file manager"
 ranger_path=".config/ranger"
 
+zathura_description="Document Viewer"
+zathura_path=".config/zathura"
+

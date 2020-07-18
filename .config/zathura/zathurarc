@@ -1,0 +1,3 @@
+set recolor true
+set recolor-darkcolor "#cacaca"
+set recolor-lightcolor "#282C34"
