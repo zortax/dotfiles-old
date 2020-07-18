@@ -97,7 +97,7 @@ nnoremap <silent> <leader>l :Lines<CR>
 
 " YouCompleteMe
 
-let g:ycm_global_ycm_extra_conf = '~/.dotfiles/vim/global_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.scripts/global_extra_conf.py'
 
 nmap <C-d> <plug>(YCMHover)
 nmap <C-b> :YcmCompleter GoTo<CR>
@@ -231,7 +231,7 @@ silent! colorscheme two-firewatch
 
 " Airline Theme
 set noshowmode
-source ~/.dotfiles/vim/lightline_theme.vim
+source ~/.scripts/lightline_theme.vim
 let g:lightline = {
       \ 'colorscheme': 'dark_qualitative',
       \ 'active': {

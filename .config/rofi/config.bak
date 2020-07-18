@@ -1,0 +1,14 @@
+rofi.show-icons: true
+rofi.drun-icon-theme: "Flat-Remix"
+rofi.modi: combi,calc,drun,window,ssh,emoji
+rofi.line: 7
+rofi.line-padding: 10
+rofi.matching: fuzzy
+rofi.bw: 0
+rofi.padding: 0
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.line-margin_ 0
+rofi.font: sans-serif 10
+rofi.theme: .config/rofi/rofi-dark-custom.rasi
+
