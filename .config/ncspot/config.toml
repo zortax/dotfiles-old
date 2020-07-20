@@ -1,0 +1,19 @@
+user_nerdfonts = true
+
+[saved_state]
+volume = 80
+
+[theme]
+primary = "light white"
+secondary = "light black"
+title = "light red"
+playing = "red"
+playing_selected = "red"
+highlight = "light white"
+highlight_bg = "#1c1c1c"
+error = "light white"
+error_bg = "red"
+statusbar = "light red"
+statusbar_progress = "red"
+cmdline = "light white"
+
