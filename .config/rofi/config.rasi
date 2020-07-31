@@ -11,7 +11,7 @@ configuration {
     hide-scrollbar: true;
     line-margin: 0;
     font: "hack 11";
-    terminal: "konsole";
+    terminal: "kitty";
     ssh-command: "/usr/bin/gnome-terminal -x zsh -c 'ssh root@{host}'";
     width: 30;
 }

@@ -48,6 +48,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'zortax/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 
