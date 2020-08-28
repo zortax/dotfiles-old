@@ -1,6 +1,6 @@
 [bar/top]
-width = 100%
-height = 24
+width = 100%:-12
+height = 27
 clickareas = 45
 ;tray-position = right
 tray-padding = 8
@@ -9,20 +9,20 @@ tray-background = #1E2127
 tray-transparent = false
 ;background = #E6181818
 ;background = #1E2127
-background = #181818
+background = #282C34
 background-alt = #555
 ;foreground = #999999
 foreground = #cccccc
 foreground-alt = #555555
 dpi = 190
 monitor = ${env:MONITOR:}
-offset-x = 0
-offset-y = 0
-radius = 0
+offset-x = 6
+offset-y = 6
+radius = 10.0
 border-size = 0
 border-color = #000000000
 locale = en_US.UTF-8
-bottom = true
+bottom = false
 
 spacing = 1
 underline-size = 2
@@ -49,9 +49,9 @@ type = internal/battery
 full-at = 98
 time-format = %H:%M
 
-label-charging = %{F#41535b} |   %{F#cccccc}%percentage%% 
+label-charging = %{F#41535b} / chr %{F#cccccc}%percentage%% 
 ;(%time%)
-label-discharging = %{F#41535b} |   %{F#cccccc}%percentage%%
+label-discharging = %{F#41535b} / dchr %{F#cccccc}%percentage%%
 ;(%time%)
 
 ;format-charging = <animation-charging><label-charging>
@@ -82,7 +82,7 @@ type = internal/date
 ;date =   %%{F#999}%a %e %b%%{F-} %%{F#fff}%H:%M%%{F-}
 date = %a %e %b
 time = %H:%M
-label = %{F#41535b} |  %{F-} %date% %time%
+label = %{F#41535b} / date%{F-} %date% %time%
 
 [module/wireless-network]
 type = internal/network
@@ -93,9 +93,9 @@ ping-interval = 10
 #format-connected = <ramp-signal><label-connected>
 format-connected = <label-connected>
 #label-connected = %essid% (%signal%%)
-label-connected = %{F#41535b} | 直 %{F-} %essid%
+label-connected = %{F#41535b} / wifi%{F-} %essid%
 #label-disconnected =    not connected
-label-disconnected = "%{F#41535b} | 睊 "
+label-disconnected = ""
 label-disconnected-foreground = #66
 
 ramp-signal-0 = 
@@ -117,14 +117,14 @@ type = internal/alsa
 ;format-volume = <label-volume> <bar-volume>
 format-value = <label-volume>
 ;label-volume = 
-label-volume = %{F#41535b} | 墳 %{F-} %percentage%%
+label-volume = %{F#41535b} / vol%{F-} %percentage%%
 label-volume-foreground = ${bar/top.foreground}
 
 ;format-muted-prefix = " "
 ;format-muted-prefix = ""
 format-muted-foreground = ${bar/top.foreground-alt}
 ;label-muted = Mute
-label-muted = %{F#41535b} | 婢 %{F-} %percentage%%
+label-muted = %{F#41535b} / mut%{F-} %percentage%%
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -174,17 +174,17 @@ pin-workspaces = true
 inline-mode = false
 enable-click = true
 enable-scroll = true
-label-focused = "  "
-;label-focused = " %index% "
-;label-focused-background = #555
-label-empty = "  "
-;label-empty = " %index% "
-label-occupied = "  "
-;label-occupied = " %index% "
-label-urgent = "  "
-;label-urgent = " %index% "
+;label-focused = ●
+label-focused = " %index% "
+label-focused-background = #555
+;label-empty = ○
+label-empty = " %index% "
+;label-occupied = ◍
+label-occupied = " %index% "
+;label-urgent = ●
+label-urgent = " %index% "
 label-urgen-foreground = #ffb600
-;label-separator = " "
+label-separator = " "
 
 [module/i3]
 type = internal/i3
@@ -280,7 +280,7 @@ exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
 interval = 90
 tail = true
 format = <label>
-label = %{F#41535b} | ﮮ %{F#cccccc} %output%
+label = %{F#41535b} / pac%{F#cccccc} %output%
 
 [module/aur]
 type = custom/script
@@ -289,7 +289,7 @@ exec-if = "ping -q -w 2 -c 1 google.de > /dev/null"
 interval = 90
 tail = true
 format = <label>
-label = %{F#41535b} +%{F#cccccc} %output%
+label = %{F#41535b} / aur%{F#cccccc} %output%
  
 [module/cpu]
 type = internal/cpu
@@ -324,7 +324,7 @@ label = %{F#41535b} / ram%{-F} %gb_used%%
 type = internal/xwindow
 label-maxlen = 100
 ;label = %{F#41535b} / %{-F} %title%
-label = " %{F#41535b} [ %{F#cccccc}%title% %{F#41535b}]"
+label = " %{F#41535b}/  %{F#cccccc}%title%"
 
 [module/player]
 type = custom/script
@@ -333,13 +333,11 @@ interval = 3
 click-left = playerctl previous &
 click-right = playerctl next &
 click-middle = playerctl play-pause &
-format = <label>
-label = " %{F#41535b} %{F#cccccc} %output%"
 
 [module/polywins]
 type = custom/script
 exec = ~/.scripts/polywins.sh 2>/dev/null
+format = <label>
+label = %output%
 label-padding = 1
 interval = .5
-format = <label>
-label = "%output%"

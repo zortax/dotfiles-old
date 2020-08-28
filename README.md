@@ -2,34 +2,7 @@
 
 ### Installation
 
-1. Clone the repository: `git clone git@github.com:Zortax/dotfiles`
+1. Clone the repository: `git clone git@github.com:Zortax/dotfiles .dotfiles`
 
-2. Run the install script: `cd dotfiles && bash install.sh`
-
-### Dependencies (Arch packages)
-
-- `nvim`
-- `i3` / `i3gaps`
-- `bspwm` (rounded corner patch)
-- `rofi`
-- `sxhkd`
-- `betterlockscreen`
-- `feh`
-- `imagemagick`
-- `ttf-material-wifi-icons-git`
-- `termsyn-fonts`
-- `ttf-material-icons`
-- `ttf-font-awesome-4`
-- `pacman-contrib`
-- `trizen`
-- `polybar`
-- `ttf-font-awesome`
-- `gnome-terminal-transparency`
-- `j4-dmenu-desktop`
-- `compton`
-- `i3status`
-- `zsh`
-- `zsh-autosuggestions`
-- `zsh-syntax-highlighting`
-- Probably some more packages... ¯\_(ツ)_/¯
+2. Run the install script: `cd .dotfiles && ./dotfiles.sh -i`
 

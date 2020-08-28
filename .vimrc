@@ -173,7 +173,7 @@ endif
 syntax on
 set ruler
 set number
-set cursorline
+"set cursorline
 
 if &term =~ '256color'
     set t_ut=
