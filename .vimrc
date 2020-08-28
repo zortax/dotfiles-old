@@ -131,6 +131,7 @@ let g:vimtex_quickfix_enabled = 0
 
 let g:tex_conceal = "a"
 
+let g:tex_flavor = 'latex'
 
 " vim-autoformat
 nmap <C-l> :Autoformat<CR>
