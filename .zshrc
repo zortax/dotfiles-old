@@ -16,6 +16,21 @@ export FZF_DEFAULT_OPTS='
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
+# Typewritten Settings
+export TYPEWRITTEN_CURSOR="beam"
+export TYPEWRITTEN_GIT_RELATIVE_PATH=true
+export TYPEWRITTEN_COLOR_MAPPINGS="primary:red;secondary:red;accent:white;foreground:white"
+
+if [ "$(hostname)" = "arch-thinkpad" ] || [ "$(hostname)" = "arch-desktop" ]; then
+    export TYPEWRITTEN_PROMPT_LAYOUT="singleline"
+else
+    export TYPEWRITTEN_PROMPT_LAYOUT="singleline_verbose"
+fi
+
+if [ "$(whoami)" = "root" ]; then
+    export TYPEWRITTEN_SYMBOL="#"
+fi
+
 antigen use oh-my-zsh
 
 antigen bundle 'wfxr/forgit'
