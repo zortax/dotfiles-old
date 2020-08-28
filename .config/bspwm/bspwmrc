@@ -48,4 +48,7 @@ bspc config left_padding 0 #-6
 bspc config bottom_padding 0 #-6
 
 setxkbmap -layout de
+xsetroot -cursor_name left_ptr &
+xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 24
+
 export QT_QPA_PLATFORMTHEME=qt5ct
