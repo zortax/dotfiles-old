@@ -40,7 +40,7 @@ clipit >/dev/null 2>&1 &
 compton --unredir-if-possible -C >/dev/null 2>&1 &
 mopidy >/dev/null 2>&1 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
-/usr/lib/notify-osd/notify-osd >/dev/null 2>&1 &
+nohup dunst 2>/dev/null &
 
 bspc config top_padding 0 #23
 bspc config right_padding 0 #-6

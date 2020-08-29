@@ -45,3 +45,6 @@ zathura_path=".config/zathura"
 ncspot_description="ncurses Spotify client"
 ncspot_path=".config/ncspot/config.toml"
 
+Dunst_description="notification daemon"
+Dunst_path=".config/dunst"
+
