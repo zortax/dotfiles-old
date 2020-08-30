@@ -3,7 +3,6 @@ sxhkd
 polybar
 kitty
 rofi
-compton
 vim
 zsh
 p10k
@@ -14,3 +13,4 @@ ranger
 zathura
 ncspot
 Dunst
+picom

@@ -15,9 +15,6 @@ kitty_path=".config/kitty"
 rofi_description="Application Launcher"
 rofi_path=".config/rofi"
 
-compton_description="X11 Compositor"
-compton_path=".config/compton.conf"
-
 vim_description="VIM Configuration"
 vim_path=".vimrc"
 
@@ -47,4 +44,7 @@ ncspot_path=".config/ncspot/config.toml"
 
 Dunst_description="notification daemon"
 Dunst_path=".config/dunst"
+
+picom_description="Xorg compositor"
+picom_path=".config/picom"
 
