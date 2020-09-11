@@ -12,7 +12,7 @@ configuration {
     line-margin: 0;
     font: "hack 11";
     terminal: "kitty";
-    ssh-command: "/usr/bin/gnome-terminal -x zsh -c 'ssh root@{host}'";
+    ssh-command: "/usr/bin/kitty -e 'ssh' 'root@{host}'";
     width: 30;
 }
-@import "/usr/share/rofi/themes/Arc-Dark-Casablanca.rasi"
+@import "~/.config/rofi/ArcoLinux-Nord.rasi"
