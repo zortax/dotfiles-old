@@ -49,6 +49,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'zortax/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
+Plug 'tikhomirov/vim-glsl'
 
 call plug#end()
 
@@ -135,6 +136,10 @@ let g:tex_flavor = 'latex'
 
 " vim-autoformat
 nmap <C-l> :Autoformat<CR>
+
+" GLSL support
+autocmd! BufNewFile,BufRead *.vs,*.vsh,*.fs,*.fsh set ft=glsl
+
 
 """""""""
 " Setup
