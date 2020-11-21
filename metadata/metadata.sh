@@ -48,3 +48,6 @@ Dunst_path=".config/dunst"
 picom_description="Xorg compositor"
 picom_path=".config/picom"
 
+dialog_description="Terminal dialog config"
+dialog_path=".dialogrc"
+
