@@ -50,6 +50,11 @@ Plug 'zortax/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tikhomirov/vim-glsl'
+Plug 'jeaye/color_coded'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+Plug 'guns/xterm-color-table.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'cstrahan/vim-capnp'
 
 call plug#end()
 
@@ -265,4 +270,28 @@ endfunction
 function! LightlineGitbranch()
     return FugitiveHead() !=# '' ? " " . FugitiveHead() : ''
 endfunction
+
+let g:terminal_color_0 = '#101010'
+let g:terminal_color_8 = '#39414E'
+
+let g:terminal_color_1 = '#EFA6A2'
+let g:terminal_color_9 = '#E0AF85'
+
+let g:terminal_color_2 = '#80C990'
+let g:terminal_color_10 = '#5ACCAF'
+
+let g:terminal_color_3 = '#A69460'
+let g:terminal_color_11 = '#C8C874'
+
+let g:terminal_color_4 = '#A3B8EF'
+let g:terminal_color_12 = '#CCACED'
+
+let g:terminal_color_5 = '#E6A3DC'
+let g:terminal_color_13 = '#F2A1C2'
+
+let g:terminal_color_6 = '#50CACD'
+let g:terminal_color_14 = '#74C3E4'
+
+let g:terminal_color_7 = '#808080'
+let g:terminal_color_15 = '#C0C0C0'
 
