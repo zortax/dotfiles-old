@@ -37,7 +37,7 @@ antigen bundle 'wfxr/forgit'
 antigen bundle 'zdharma/fast-syntax-highlighting'
 antigen bundle 'zsh-users/zsh-autosuggestions'
 antigen bundle 'joshskidmore/zsh-fzf-history-search'
-antigen bundle 'reobin/typewritten'
+antigen bundle 'zortax/typewritten'
 
 antigen theme typewritten
 antigen apply
