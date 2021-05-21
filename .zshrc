@@ -37,7 +37,7 @@ antigen bundle 'wfxr/forgit'
 antigen bundle 'zdharma/fast-syntax-highlighting'
 antigen bundle 'zsh-users/zsh-autosuggestions'
 antigen bundle 'joshskidmore/zsh-fzf-history-search'
-antigen bundle 'zortax/typewritten'
+antigen bundle 'reobin/typewritten@main'
 
 antigen theme typewritten
 antigen apply
@@ -47,4 +47,3 @@ source ~/.scripts/shortcuts.zsh
 
 export PATH=$PATH:~/.scripts
 export EDITOR=/usr/bin/vim
-
