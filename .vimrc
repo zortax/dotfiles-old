@@ -135,7 +135,7 @@ let g:ycm_semantic_triggers.tex = [
 
 let g:vimtex_quickfix_enabled = 0
 
-let g:tex_conceal = "a"
+let g:tex_conceal = ""
 
 let g:tex_flavor = 'latex'
 
@@ -294,4 +294,6 @@ let g:terminal_color_14 = '#74C3E4'
 
 let g:terminal_color_7 = '#808080'
 let g:terminal_color_15 = '#C0C0C0'
+
+set conceallevel=0
 
