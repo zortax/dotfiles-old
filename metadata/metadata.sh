@@ -51,3 +51,6 @@ picom_path=".config/picom"
 dialog_description="Terminal dialog config"
 dialog_path=".dialogrc"
 
+nvim_description="Neovim configuration"
+nvim_path=".config/nvim"
+

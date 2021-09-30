@@ -55,11 +55,11 @@ let s:p.visual.right = [ [ s:c15, s:c00, 'bold' ], [ s:c15, s:c00 ] ]
 let s:p.visual.borderleft = [ [ s:c04, s:bg ] ]
 let s:p.visual.borderright = [ [ s:c00, s:bg ] ]
 
-let s:p.tabline.left = [ [ s:c08, s:c01, 'bold' ], [ s:c15, s:c00 ] ]
-let s:p.tabline.tabsel = [ [ s:c08, s:c06, 'bold' ] ]
-let s:p.tabline.middle = [ [ s:c15, s:c07 ] ]
+let s:p.tabline.left = [ [ s:c15, s:c00, 'bold' ], [ s:c15, s:c00 ] ]
+let s:p.tabline.tabsel = [ [ s:c08, s:c09, 'bold' ] ]
+let s:p.tabline.middle = [ [ s:c15, s:c08 ] ]
 let s:p.tabline.right = [ [ s:c15, s:c00, 'bold' ], [ s:c15, s:c00 ] ]
-let s:p.tabline.borderleft = [ [ s:c01, s:bg ] ]
+let s:p.tabline.borderleft = [ [ s:c00, s:bg ] ]
 let s:p.tabline.borderright = [ [ s:c00, s:bg ] ]
 
 

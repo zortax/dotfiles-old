@@ -18,7 +18,6 @@ fi
 
 bspc config border_width         0
 bspc config window_gap           6
-bspc config top_padding          0
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
@@ -51,3 +50,5 @@ xsetroot -cursor_name left_ptr &
 xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 24
 
 export QT_QPA_PLATFORMTHEME=qt5ct
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+

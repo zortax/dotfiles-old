@@ -28,6 +28,7 @@ call plug#begin(expand('~/.vim/plugged'))
 
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'zortax/lightline.vim'
 Plug 'Yggdroot/indentLine'
 if isdirectory('/usr/local/opt/fzf')
@@ -50,11 +51,10 @@ Plug 'zortax/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tikhomirov/vim-glsl'
-Plug 'jeaye/color_coded'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'guns/xterm-color-table.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'cstrahan/vim-capnp'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'lambdalisue/glyph-palette.vim'
 
 call plug#end()
 
@@ -101,42 +101,71 @@ nnoremap <silent> <leader>e :FZF -m<CR>
 nmap <leader>y :History:<CR>
 nnoremap <silent> <leader>l :Lines<CR>
 
+" coc
 
-" YouCompleteMe
+" Tigger completion with Tab
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-let g:ycm_global_ycm_extra_conf = '~/.scripts/global_extra_conf.py'
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
-nmap <C-d> <plug>(YCMHover)
-nmap <C-b> :YcmCompleter GoTo<CR>
-
-let g:ycm_complete_in_comments = 1
-
-set completeopt-=preview
-
-if !exists('g:ycm_semantic_triggers')
-    let g:ycm_semantic_triggers = {}
+" Use <c-space> to trigger completion
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+if has('nvim-0.4.0') || has('patch-8.2.0750')
+  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+endif
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Code actions
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>aw   <Plug>(coc-codeaction-selected)w
 
 " vimtex
 let g:vimtex_view_method = 'zathura'
-let g:ycm_semantic_triggers.tex = [
-    \ 're!\\[A-Za-z]*cite[A-Za-z]*(\[[^]]*\]){0,2}{[^}]*',
-    \ 're!\\[A-Za-z]*ref({[^}]*|range{([^,{}]*(}{)?))',
-    \ 're!\\hyperref\[[^]]*',
-    \ 're!\\includegraphics\*?(\[[^]]*\]){0,2}{[^}]*',
-    \ 're!\\(include(only)?|input){[^}]*',
-    \ 're!\\\a*(gls|Gls|GLS)(pl)?\a*(\s*\[[^]]*\]){0,2}\s*\{[^}]*',
-    \ 're!\\includepdf(\s*\[[^]]*\])?\s*\{[^}]*',
-    \ 're!\\includestandalone(\s*\[[^]]*\])?\s*\{[^}]*',
-    \ 're!\\usepackage(\s*\[[^]]*\])?\s*\{[^}]*',
-    \ 're!\\documentclass(\s*\[[^]]*\])?\s*\{[^}]*',
-    \ 're!\\[A-Za-z]*',
-    \ ]
-
 let g:vimtex_quickfix_enabled = 0
-
 let g:tex_conceal = ""
-
 let g:tex_flavor = 'latex'
 
 " vim-autoformat
@@ -263,6 +292,9 @@ let g:lightline = {
       \ },
       \ }
 
+
+
+
 function! LightlineReadonly()
     return &readonly ? '' : ''
 endfunction
@@ -297,3 +329,11 @@ let g:terminal_color_15 = '#C0C0C0'
 
 set conceallevel=0
 
+" Undercurl errors/warning
+hi CocErrorHighlight guifg=#dc5151 gui=undercurl
+hi CocWarningHighlight guifg=#c4ab39 gui=undercurl
+
+" Signs
+hi CocErrorSign guifg=#dc5151
+hi CocWarningSign guifg=#c4ab39
+hi CocInfoSign guifg=#6580ad
