@@ -10,6 +10,7 @@ alias ":q"="exit"
 alias "rm -rf /"="echo \"read mail really fast\""
 alias "pls"="sudo \$(history | tail -n1 | cut --complement -d' ' -f1)"
 alias "copy"="xsel -ib"
+alias "vim"="nvim"
 
 man() {
     LESS_TERMCAP_md=$'\e[01;31m' \

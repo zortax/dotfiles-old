@@ -7,6 +7,24 @@
             "command": "rust-analyzer",
             "filetypes": ["rust"],
             "rootPatterns": ["Cargo.toml"]
+        },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "ccp",
+                "objc",
+                "objccp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
         }
     },
     "suggest.completionItemKindLabels": {

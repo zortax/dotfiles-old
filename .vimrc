@@ -26,9 +26,8 @@ set omnifunc=syntaxcomplete#Complete
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
-Plug 'preservim/nerdtree'
+
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'zortax/lightline.vim'
 Plug 'Yggdroot/indentLine'
 if isdirectory('/usr/local/opt/fzf')
@@ -41,11 +40,11 @@ Plug 'lervag/vimtex'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ayu-theme/ayu-vim'
 Plug 'ciaranm/detectindent'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
 Plug 'junegunn/goyo.vim'
 Plug 'zortax/vim-two-firewatch'
 Plug 'tpope/vim-fugitive'
@@ -56,24 +55,89 @@ Plug 'cstrahan/vim-capnp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lambdalisue/glyph-palette.vim'
 
+if has('nvim')
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'akinsho/bufferline.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'kyazdani42/nvim-tree.lua'
+else
+  Plug 'preservim/nerdtree'
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+endif
+
 call plug#end()
 
 """"""""""""""""""""""""
 " Plugin Configuration
 """"""""""""""""""""""""
 
-" nerdtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+""""""""""""""""""""""""""""
+" Nvim Plugin Configuration
+""""""""""""""""""""""""""""
+if has('nvim')
 
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+set mouse=a    
 
-let g:NERDTreeShowHidden=1
+" Bufferline
 
-map <C-o> :NERDTreeToggle<CR>
+lua << EOF
+require("bufferline").setup{
+  options = {
+    diagnostics = false,
+    separator_style = "thin",
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "Files",
+        highlight = "BufferLineFill",
+        text_align = "center"
+      }
+    },
+  }
+}
+EOF
+
+" Treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  sync_install = false,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+
+" nvim-tree
+lua << EOF
+require'nvim-tree'.setup {
+  view = {
+    width = 40
+  }
+}
+EOF
+nnoremap <C-o> :NvimTreeToggle<CR>
+
+else
+  " Plugin configuration for non-nvim plugins
+  
+  " nerdtree
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+  autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+  let g:NERDTreeDirArrowExpandable = '▸'
+  let g:NERDTreeDirArrowCollapsible = '▾'
+
+  let g:NERDTreeShowHidden=1
+
+  map <C-o> :NERDTreeToggle<CR>
+endif
+
+
 
 
 " indentLine
@@ -162,6 +226,10 @@ xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>aw   <Plug>(coc-codeaction-selected)w
 
+"set <a-cr>=^[^M
+nmap <a-cr> <Plug>(coc-codeaction-selected)j
+
+
 " vimtex
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_enabled = 0
@@ -170,6 +238,7 @@ let g:tex_flavor = 'latex'
 
 " vim-autoformat
 nmap <C-l> :Autoformat<CR>
+let g:formatter_yapf_style = 'pep8'
 
 " GLSL support
 autocmd! BufNewFile,BufRead *.vs,*.vsh,*.fs,*.fsh set ft=glsl
@@ -210,6 +279,8 @@ else
 endif
 
 " Syntax, Linenumbers,...
+" Colorscheme
+
 syntax on
 set ruler
 set number
@@ -337,3 +408,13 @@ hi CocWarningHighlight guifg=#c4ab39 gui=undercurl
 hi CocErrorSign guifg=#dc5151
 hi CocWarningSign guifg=#c4ab39
 hi CocInfoSign guifg=#6580ad
+
+if has('nvim')
+  hi NvimTreeNormal guibg=#1F1F1F
+  autocmd VimEnter * hi BufferLineFill guibg=#2C323C
+  autocmd VimEnter * hi BufferLineBackground guibg=#2C323C
+  autocmd VimEnter * hi BufferLineSeparator guibg=#2C323C
+  autocmd VimEnter * hi BufferLineCloseButton guibg=#2C323C
+  autocmd VimEnter * hi BufferLineModified guibg=#2C323C
+  autocmd VimEnter * hi BufferLineDuplicate guibg=#2C323C
+endif
