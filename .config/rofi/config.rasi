@@ -1,3 +1,4 @@
+@theme "~/.config/rofi/rounded-gray-dark.rasi"
 configuration {
     show-icons: true;
     drun-icon-theme: "Flat-Remix";
@@ -15,4 +16,4 @@ configuration {
     ssh-command: "/usr/bin/kitty -e 'ssh' 'root@{host}'";
     width: 30;
 }
-@import "~/.config/rofi/ArcoLinux-Nord.rasi"
+
