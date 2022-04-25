@@ -40,7 +40,7 @@ clipit >/dev/null 2>&1 &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
 dunst >/dev/null 2>&1 &
 
-bspc config top_padding 0 #23
+bspc config top_padding 36
 bspc config right_padding 0 #-6
 bspc config left_padding 0 #-6
 bspc config bottom_padding 0 #-6
