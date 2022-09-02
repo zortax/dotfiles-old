@@ -1,5 +1,6 @@
 @theme "~/.config/rofi/rounded-gray-dark.rasi"
 configuration {
+    display-combi: "";
     show-icons: true;
     drun-icon-theme: "Flat-Remix";
     modi: "combi,calc,drun,window,ssh,emoji";

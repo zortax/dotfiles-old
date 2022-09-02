@@ -54,12 +54,19 @@ Plug 'guns/xterm-color-table.vim'
 Plug 'cstrahan/vim-capnp'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lambdalisue/glyph-palette.vim'
+Plug 'terryma/vim-smooth-scroll'
+Plug 'wellle/context.vim'
+Plug 'mhartington/oceanic-next'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'sainnhe/everforest'
+
 
 if has('nvim')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'akinsho/bufferline.nvim'
   Plug 'nvim-treesitter/nvim-treesitter'
   Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'marko-cerovac/material.nvim'
 else
   Plug 'preservim/nerdtree'
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -101,7 +108,7 @@ EOF
 " Treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   sync_install = false,
   highlight = {
     enable = true,
@@ -168,16 +175,20 @@ nnoremap <silent> <leader>l :Lines<CR>
 " coc
 
 " Tigger completion with Tab
+
 inoremap <silent><expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  \ coc#pum#visible() ? coc#_select_confirm() :
+  \ coc#expandableOrJumpable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1] =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 " Use <c-space> to trigger completion
 if has('nvim')
@@ -243,10 +254,19 @@ let g:formatter_yapf_style = 'pep8'
 " GLSL support
 autocmd! BufNewFile,BufRead *.vs,*.vsh,*.fs,*.fsh set ft=glsl
 
+" Smoot Scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
 """""""""
 " Setup
 """""""""
+
+" Python support
+let g:python3_host_prog = '/usr/bin/python3'
+let g:python2_host_prog = '/usr/bin/python2'
 
 " Encoding
 set encoding=utf-8
@@ -339,7 +359,9 @@ set termguicolors
 set background=dark
 
 " Colorscheme
-silent! colorscheme two-firewatch
+let g:everforest_background = 'soft'
+silent! colorscheme everforest
+hi Normal guibg=NONE ctermbg=NONE
 
 " Airline Theme
 set noshowmode
@@ -417,4 +439,7 @@ if has('nvim')
   autocmd VimEnter * hi BufferLineCloseButton guibg=#2C323C
   autocmd VimEnter * hi BufferLineModified guibg=#2C323C
   autocmd VimEnter * hi BufferLineDuplicate guibg=#2C323C
+  autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
+  autocmd VimEnter * syntax on
 endif
+
