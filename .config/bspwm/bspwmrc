@@ -4,8 +4,8 @@ sxhkd &
 
 if [[ $(hostname) == 'arch-desktop' ]]; then
 #    xrandr --output DVI-D-0 --off --output HDMI-0 --mode 1920x1080 --pos 3840x472 --rotate normal --output DVI-I-1 --off --output DVI-I-0 --mode 1280x1024 --pos 0x624 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 2560x1440 --pos 1280x0 --rotate normal
-xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x623 --rotate normal --output DP-0 --primary --mode 2560x1440 --pos 1280x0 --rotate normal --output DP-1 --off --output DP-2 --mode 1280x1024 --pos 0x651 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --off
-
+#xrandr --output HDMI-0 --mode 1920x1080 --pos 3840x623 --rotate normal --output DP-0 --primary --mode 2560x1440 --pos 1280x0 --rotate normal --output DP-1 --off --output DP-2 --mode 1280x1024 --pos 0x651 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --off
+    xrandr --output HDMI-0 --mode 1920x1080 --pos 5120x492 --rotate normal --output DP-0 --primary --mode 2560x1440 --pos 2560x21 --rotate normal --output DP-1 --off --output DP-2 --mode 2560x1440 --pos 0x0 --rotate normal --output DP-3 --off --output DP-4 --off --output DP-5 --off
     bspc monitor DP-0 -d I II III IV
     bspc monitor HDMI-0 -d V VI VII VIII
     bspc monitor DP-2 -d IX X
