@@ -35,7 +35,7 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Zathura -o state=tiled
 
 picom -Cb --animations
-nm-applet >/dev/null 2>&1 &
+#nm-applet >/dev/null 2>&1 &
 betterlockscreen -w
 bash $HOME/.config/polybar/launch.sh >/dev/null 2>&1 &
 clipit >/dev/null 2>&1 &
@@ -48,6 +48,7 @@ bspc config left_padding 0 #-6
 bspc config bottom_padding 0 #-6
 
 setxkbmap -layout us
+setxkbmap -layout us -variant intlde
 xsetroot -cursor_name left_ptr &
 xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 24
 

@@ -34,3 +34,9 @@ setwall() {
     betterlockscreen -w
 }
 
+lvim() {
+    kitty @ set-spacing margin=0
+    ~/.local/bin/lvim $@
+    kitty @ set-spacing margin=12
+}
+
