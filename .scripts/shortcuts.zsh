@@ -39,4 +39,12 @@ lvim() {
     ~/.local/bin/lvim $@
     kitty @ set-spacing margin=12
 }
-
+nvim() {
+    if [ "$TERM" = "xterm-kitty" ]; then
+        kitty @ set-spacing margin=0
+    fi
+    /usr/bin/nvim $@
+    if [ "$TERM" = "xterm-kitty" ]; then
+        kitty @ set-spacing margin=12
+    fi
+}

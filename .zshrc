@@ -46,4 +46,4 @@ source ~/.scripts/aliases.zsh
 source ~/.scripts/shortcuts.zsh
 
 export PATH=$PATH:~/.scripts
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
